@@ -1,0 +1,12 @@
+.devider{
+    position: relative;
+    width: 100%;
+}
+.devider::after{
+    content: '';
+    position: absolute;
+    left: 15rem;
+    right: 5rem;
+    height: 2px;
+    background: #00000042;
+}

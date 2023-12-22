@@ -1,0 +1,27 @@
+.projects_wrapper{
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+}
+#projects {
+    /* margin-top: 3rem; */
+    display: grid;
+    gap: 5rem;
+}
+
+.project {
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+}
+
+.project_display {
+    width: 200px;
+    height: 200px;
+    aspect-ratio: 1;
+    background: #00000042;
+}
+
+.project_title {
+    cursor: pointer;
+}

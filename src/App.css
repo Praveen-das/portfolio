@@ -1,0 +1,72 @@
+::-webkit-scrollbar {
+  /* display: none; */
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  height: 100%;
+
+}
+
+#App {
+  position: relative;
+  height: 100%;
+}
+
+a {
+  all: unset;
+}
+
+.motion {
+  /* background-color: #fff;
+  width: 500px;
+  height: 500px; */
+}
+
+main {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  /* display: grid;
+  grid-area: 100px; */
+}
+
+section {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding-inline: 15rem 5rem;
+}
+
+.title {
+  letter-spacing: 5px;
+  margin-bottom: 3rem;
+}
+
+
+.dark {
+  background: #00000070;
+}
+
+.gutter {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+.gutter-top {
+  padding-top: 10rem;
+}
+
+.gutter-bottom {
+  padding-bottom: 10rem;
+}
+
+.h6 {
+  font-size: 2rem;
+  line-height: 4rem;
+  letter-spacing: 0.15em;
+}
+
+.h5 {
+  font-size: 1.125rem;
+}

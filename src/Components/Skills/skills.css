@@ -1,0 +1,36 @@
+.skills_wrapper {
+    width: 100%;
+    position: relative;
+}
+
+#expertise {
+    display: grid;
+    gap: 8rem 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.skills {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+    /* justify-content: center; */
+    height: 100px;
+    gap: 1rem;
+}
+
+.area_of_expertise {
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.skill_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 2rem;
+    align-items: center;
+}
+
+.skill {
+    font-size: 1rem;
+}

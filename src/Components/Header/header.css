@@ -1,0 +1,41 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: var(--padding);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1000;
+    height: 100vh;
+}
+
+#logo {
+    font-size: 1.5em;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+#navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.nav_items {
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s ease-out;
+    display: flex;
+    justify-content: center;
+}
+
+.nav_item--wrapper {
+    padding-right: 3rem;
+    padding-block: 2px;
+    cursor: pointer;
+}
