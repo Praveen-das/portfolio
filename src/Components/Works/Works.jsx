@@ -1,7 +1,6 @@
 import React from 'react'
 import './works.css'
-import Motion from '../../UIComponents/motion'
-
+import { motion } from 'framer-motion'
 
 const collection = {
     Artworld: {
@@ -24,18 +23,53 @@ const collection = {
 }
 
 export default function Works() {
+    let FROM = 'inset(0 0 100% 0)'
+    let TO = 'inset(0 0% 0% 0)'
+
+    const container = {
+        visible: {
+            transition: {
+                delayChildren: 0.2,
+                staggerChildren: 0.1,
+            },
+        }
+    }
+
+    const item = {
+        hidden: {
+            clipPath: FROM,
+            opacity: 0,
+            translateY: 50,
+        },
+        visible: {
+            clipPath: TO,
+            opacity: 1,
+            translateY: 0,
+            transition: {
+                duration: 0.5,
+                // ease:'easeOut'
+            },
+        }
+    }
+
     return (
-        <section id='3' className='gutter-bottom' >
-            <div className="projects_wrapper">
-                <label className='title' htmlFor="">FEATURED PROJECTS</label>
+        <section id='works' className='gutter' >
+            <div
+
+                className="projects_wrapper"
+            >
+                <label className='title' htmlFor="FEATURED PROJECTS">FEATURED PROJECTS</label>
                 <div id="projects">
                     {
                         Object.entries(collection).map(([area, { desc, link }]) => (
-                            <div key={area} className="project">
-                                {/* <div className="project_display"></div> */}
-                                <label id='hero_desc' htmlFor="">{area}</label>
-                                <label className='h5' htmlFor="">{desc}</label>
-                            </div>
+                            <motion.div
+                                initial='hidden'
+                                whileInView='visible'
+                                variants={container}
+                                key={area} className="project">
+                                <motion.label key={area} variants={item} id='hero_desc' className='project_title' htmlFor="">{area}</motion.label>
+                                <motion.label variants={item} className='h5' htmlFor="">{desc}</motion.label>
+                            </motion.div>
                         ))
                     }
                 </div>

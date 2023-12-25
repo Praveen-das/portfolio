@@ -14,23 +14,13 @@
     width: var(--pointer_size);
     height: var(--pointer_size);
     border-radius: 50%;
-    background: #ffffff;
+    background-color: #ffffff;
     transition: scale 0.2s ease-out;
 }
 
-.expand {
-    /* scale: 5; */
-}
-
-#pointer_shadow {
-    --border_size: 15px;
-
-    position: fixed;
-    left: var(--psx);
-    top: var(--psy);
-    width: var(--border_size);
-    height: var(--border_size);
-    border-radius: 50%;
-    /* background: #000; */
-    transition: 0.5s ease-out;
+.invert {
+    background-color: #6200ff !important;
+    z-index: 150 !important;
+    mix-blend-mode: unset !important;
+    transition: 0.2s ease-out;
 }

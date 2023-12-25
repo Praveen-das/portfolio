@@ -2,6 +2,7 @@
     width: 100%;
     display: grid;
     gap: 1rem;
+    /* margin-top: -10rem; */
 }
 #projects {
     /* margin-top: 3rem; */
@@ -13,6 +14,8 @@
     display: flex;
     align-items: baseline;
     gap: 2rem;
+    padding-bottom: var(--padding_bottom);
+    border-bottom: 2px solid var(--border_bottom);
 }
 
 .project_display {
@@ -21,7 +24,9 @@
     aspect-ratio: 1;
     background: #00000042;
 }
-
+.project_title--wrapper{
+    display: flex;
+}
 .project_title {
     cursor: pointer;
 }

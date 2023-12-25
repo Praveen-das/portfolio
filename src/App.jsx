@@ -6,28 +6,45 @@ import Pointer from './Components/Pointer/Pointer'
 import About from './Components/About/About'
 import Skills from './Components/Skills/Skills'
 import Projects from './Components/Works/Works'
-import { useScroll, useTransform } from 'framer-motion'
-import Devider from './UIComponents/Divider/Divider'
+import Lenis from '@studio-freight/lenis'
+import { useLayoutEffect, utEffect, useRef } from 'react'
+import ContactMe from './Components/ContactMe/ContactMe'
+
+
+let lenis = new Lenis()
 
 function App() {
-  const { scrollYProgress } = useScroll()
-  const opacity1 = useTransform(scrollYProgress, [0, 0.05], [1, 0])
-  const opacity2 = useTransform(scrollYProgress, [0.05, 0.1], [0, 1])
+  const raf = useRef()
+
+  function animate(time) {
+    lenis.raf(time)
+    requestAnimationFrame(animate)
+  }
+
+  useLayoutEffect(() => {
+    raf.current = requestAnimationFrame(animate)
+
+    return () => {
+      cancelAnimationFrame(raf.current)
+    }
+  }, [])
+
+
 
   return (
     <div id='App'>
       {/* <Blobs /> */}
       <div id="blur"></div>
       <main>
-        <Pointer />
         <Header />
+        <Pointer />
+        {/* ///////////////////////////// */}
         <HeroSection />
-        <About style={{ opacity: opacity1 }} />
-        <Skills style={{ opacity: opacity2 }} />
-        {/* <Devider /> */}
+        <About />
+        <Skills />
         <Projects />
+        <ContactMe />
       </main>
-
     </div >
   )
 }

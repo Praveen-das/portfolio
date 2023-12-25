@@ -9,12 +9,6 @@
     cursor: pointer;
 }
 .icon_wrapper{
-    /* transition: 0.2s ease-out; */
     pointer-events: none;
 }
-.icon_button:hover {
-    /* scale: 1.2; */
-}
-.icon_button:active {
-    /* scale: 1; */
-}
+

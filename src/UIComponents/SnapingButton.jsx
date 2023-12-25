@@ -59,6 +59,7 @@ export default function SnapingButton(
     const [style, api] = useSpring(() => ({ x: 0, y: 0 }))
 
     useEffect(() => {
+        if (window.innerWidth < 480) return
         let box = iconButtonRef.current.getBoundingClientRect()
 
         iconButtonRef.current.onmousemove = (e) => {

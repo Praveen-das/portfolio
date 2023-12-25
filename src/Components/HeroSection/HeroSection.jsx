@@ -1,49 +1,109 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { easeIn, motion, } from 'framer-motion'
 import './hero.css'
-import Linkedin from '../../assets/icons/linkedin.svg?react'
-import Facebook from '../../assets/icons/facebook.svg?react'
-import Instagram from '../../assets/icons/instagram.svg?react'
-import Github from '../../assets/icons/github.svg?react'
-import Mail from '../../assets/icons/mail.svg?react'
-import SnapingButton from '../../UIComponents/SnapingButton'
-
-const links = {
-    github: 'https://github.com/Praveen-das',
-    linkedin: 'https://www.linkedin.com/in/praveen-das-625631136/',
-    instagram: 'https://www.instagram.com',
-    facebook: 'https://www.facebook.com',
-    mail: 'mailto:praveendask97@gmail.com',
-}
 
 export default function HeroSection() {
-    const handleSocialMediaLink = (item) => {
-        window.open(links[item])
-    }
+    let FROM = 'inset(0 100% 0 0)'
+    let TO = 'inset(0 0% 0 0)'
+    let
+        hero_name = {
+            hidden: { opacity: 0 },
+            visible: {
+                opacity: 1,
+                translateY: 0,
+                transition: {
+                    duration: 2,
+                },
+            },
+        },
+        hero_desc = {
+            hidden: { opacity: 0, translateY: 50 },
+            visible: {
+                opacity: 1,
+                translateY: 0,
+                transition: {
+                    duration: 2,
+                    delayChildren: 0.2,
+                    staggerChildren: 0.05,
+                },
+            },
+        }
+        , fractions = {
+            hidden: {
+                "--clip": FROM,
+                opacity: 0,
+            },
+            visible: {
+                "--clip": TO,
+                opacity: 1,
+                transition: {
+                    duration: 1,
+                },
+            }
+        }
+        , fractions_wireframe = {
+            hidden: {
+                "--clip": FROM,
+                // translateX: -10,
+                opacity: 0,
+            },
+            visible: {
+                "--clip": TO,
+                translateX: 0,
+                opacity: 1,
+                transition: {
+                    duration: 0.8
+                },
+            }
+        };
+
+    const text = 'build everything on the web, from how it looks to how it works.'
+    let words = text.split(' ')
 
     return (
-        <section>
-            <div className='hero_content'>
-                <label className='hero_name' htmlFor="hero_name">PRAVEEN DAS</label>
-                <div id='hero_desc' htmlFor="hero_desc">
-                    build everything<br/>
-                    on the web,<br/>
-                    from how it looks<br/>
-                    to how it works.
+        <section id='#/'>
+            <motion.div
+                initial='hidden'
+                animate='visible'
+                className='hero_content'
+            >
+                <motion.label
+                    variants={hero_name}
+                    className='hero_name'
+                    htmlFor="hero_name"
+                >
+                    PRAVEEN DAS
+                </motion.label>
+                <div className="desc_wrapper">
+                    <motion.div
+                        variants={hero_desc}
+                        id='hero_desc'
+                        htmlFor="hero_desc"
+                    >
+                        {
+                            words.map((word, key) => (
+                                <motion.label key={key} className='fractions' data-word={word} variants={fractions}>
+                                    {word}
+                                </motion.label>
+                            ))
+                        }
+                    </motion.div>
+                    {/* <motion.div
+                        variants={hero_desc}
+                        id='hero_desc'
+                        className='absolute'
+                        htmlFor="hero_desc"
+                    >
+                        {
+                            words.map((word, key) => (
+                                <motion.label key={key} className='fractions wireframe' data-word={word} variants={fractions_wireframe}>
+                                    {word}
+                                </motion.label>
+                            ))
+                        }
+                    </motion.div> */}
                 </div>
-                {/* <label className='what_i_do' htmlFor="hero_name">I code and design cool web stuffs.</label> */}
-                {/* <p htmlFor="about">I am a passionate and versatile Full Stack Developer with a keen interest in crafting innovative solutions to complex problems. My journey in the world of technology began with a fascination for creating and shaping digital experiences. Over the years, I have honed my skills to become a proficient and resourceful developer.</p> */}
-                {/* <div className='social'>
-                    <SnapingButton className='icon_button' name='github' onClick={() => handleSocialMediaLink('github')}>
-                        <Github height={20} width={20} />
-                    </SnapingButton>
-                    <SnapingButton className='icon_button' name='linkedin' onClick={() => handleSocialMediaLink('linkedin')}>
-                        <Linkedin height={18} width={18} />
-                    </SnapingButton>
-                    <SnapingButton className='icon_button' name='mail' onClick={() => handleSocialMediaLink('mail')}>
-                        <Mail height={22} width={22} />
-                    </SnapingButton>
-                </div> */}
-            </div>
+            </motion.div>
         </section>
     )
 }

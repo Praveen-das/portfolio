@@ -5,8 +5,8 @@
 
 #expertise {
     display: grid;
-    gap: 8rem 4rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 6rem 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
 .skills {
@@ -15,11 +15,18 @@
     align-items: baseline;
     flex-direction: column;
     /* justify-content: center; */
-    height: 100px;
     gap: 1rem;
+    padding-bottom: var(--padding_bottom);
+    border-bottom: 2px solid var(--border_bottom);
 }
-
-.area_of_expertise {
+.skill_area--wrapper{
+    display: flex;
+}
+.characters{
+    position: relative;
+    
+}
+.skill_area {
     text-transform: uppercase;
     white-space: nowrap;
 }

@@ -42,25 +42,70 @@ export default function Pointer() {
     }
 
     // let hero_name = document.getElementById('hero_name')
-    // let logo = document.getElementById('logo')
+    let logo = document.getElementById('logo')
+    let desc_wrapper = document.getElementsByClassName('desc_wrapper')
+    let skills = document.getElementsByClassName('skills')
+    let about_wrapper = document.getElementsByClassName('about_wrapper')
     let icon_button = document.getElementsByClassName('icon_button')
     let nav_items = document.getElementsByClassName('nav_item--wrapper')
-    let project_title = document.getElementsByClassName('project_title')
+    let project = document.getElementsByClassName('project')
 
 
-    let hitItems = [
-      // logo,
+    let expandingLinks = [
+      logo,
       ...icon_button,
       ...nav_items,
-      ...project_title
+      ...project
     ]
 
-    hitItems.forEach(item => {
-      item.onpointerenter = () => {
-        pointer.current.style.scale = 5
+    let wireframeItems = [
+      ...about_wrapper,
+      ...skills,
+      ...desc_wrapper,
+    ]
+
+    expandingLinks.forEach(item => {
+      let SCALE_FROM = 1
+      let SCALE_TO = 5
+
+      if (item.className === 'project') {
+        SCALE_TO = 15
+      } else {
+        SCALE_TO = 5
       }
+
+      item.onmouseenter = () => {
+        pointer.current.style.scale = SCALE_TO
+      }
+      
       item.onpointerleave = () => {
-        pointer.current.style.scale = 1
+        pointer.current.style.scale = SCALE_FROM
+      }
+    })
+
+    let timer
+
+    wireframeItems.forEach(item => {
+      let SCALE_FROM = 1
+      let SCALE_TO = 30
+
+      if (item.className === 'skills') {
+        SCALE_TO = 20
+      } else {
+        SCALE_TO = 30
+      }
+
+      item.onmouseenter = () => {
+        pointer.current.style.scale = SCALE_TO
+        if (timer) clearTimeout(timer)
+        pointer.current.classList.add('invert')
+      }
+
+      item.onmouseleave = () => {
+        pointer.current.style.scale = SCALE_FROM
+        timer = setTimeout(() => {
+          pointer.current.classList.remove('invert')
+        }, 200)
       }
     })
   }, [])

@@ -5,7 +5,6 @@
 html {
   scroll-snap-type: y mandatory;
   height: 100%;
-
 }
 
 #App {
@@ -34,39 +33,205 @@ main {
 section {
   display: flex;
   align-items: center;
-  min-height: 100vh;
-  padding-inline: 15rem 5rem;
+  /* min-height: 100vh; */
+  padding-inline: 16rem 5rem;
+  margin-bottom: 1px;
+  /* padding-block: 15rem; */
 }
 
 .title {
+  position: relative;
   letter-spacing: 5px;
   margin-bottom: 3rem;
+  z-index: 151;
 }
 
-
 .dark {
-  background: #00000070;
+  background: var(--border_bottom);
 }
 
 .gutter {
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding-top: var(--gutter);
+  padding-bottom: var(--gutter);
 }
 
 .gutter-top {
-  padding-top: 10rem;
+  padding-top: var(--gutter);
 }
 
 .gutter-bottom {
-  padding-bottom: 10rem;
+  padding-bottom: var(--gutter);
+}
+
+.bold_text {
+  font-size: var(--hero_name);
+  font-weight: 900;
+  letter-spacing: 5px;
+  margin-left: -0.065em;
+  text-transform: uppercase;
 }
 
 .h6 {
-  font-size: 2rem;
+  font-size: 2.8rem;
+  font-weight: 900;
   line-height: 4rem;
   letter-spacing: 0.15em;
+  color: white;
 }
 
 .h5 {
+  position: relative;
   font-size: 1.125rem;
+  color: #ffffff;
+  z-index: 200;
+}
+
+/* ///////////////////////////// */
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+@media (max-width: 1200px) {
+  section {
+    padding-inline: 14rem 5rem;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --gutter: 8rem !important;
+    font-size: 14px;
+  }
+
+  section {
+    padding-inline: 14rem 3rem;
+  }
+
+  .hero_content {
+    padding-block: 15rem 10rem !important;
+  }
+
+  .project {
+    flex-direction: column;
+  }
+
+  #expertise {
+    gap: 4rem 4rem !important;
+  }
+
+}
+
+@media (max-width: 768px) {
+  :root {
+    --gutter: 6rem !important;
+    font-size: 14px;
+  }
+
+  section {
+    padding-inline: 12rem 3rem;
+  }
+
+  .hero_content {
+    padding-block: 14rem 10rem !important;
+  }
+
+  #expertise {
+    gap: 2rem 4rem !important;
+  }
+
+}
+
+@media (max-width: 480px) {
+  #header {
+    display: none !important;
+  }
+
+  :root {
+    --gutter: 5rem !important;
+    --padding: 3rem 2rem;
+    --padding_bottom: 4rem !important;
+    --hero_name: 3rem !important;
+    font-size: 14px;
+  }
+  #pointer{
+    display: none;
+  }
+  section {
+    padding-inline: 15px;
+    text-align: center;
+    display: grid;
+  }
+
+  .hero_content {
+    padding-block: 5rem 5rem !important;
+    height: 100vh;
+    height: 100svh;
+  }
+
+  #hero_desc,
+  .about_wrapper,
+  .skills,
+  .project,
+  .skill_wrapper {
+    justify-content: center;
+    align-items: center !important;
+  }
+
+  .hero_content .hero_name {
+    margin-top: 0 !important;
+  }
+
+  #expertise,
+  #projects {
+    gap: 2rem !important;
+  }
+
+  .h6 {
+    font-size: 1.7rem;
+    line-height: 1.8rem;
+  }
+
+  .skills {
+    gap: 1.8rem !important;
+  }
+
+  .icon_button {
+    --size: 50px !important;
+  }
+
+  .contents {
+    gap: 2rem !important;
+    justify-items: center;
+  }
+
+  .contents .h6 {
+    line-height: 3rem !important;
+  }
+
+  .links {
+    margin-left: 0px !important;
+    justify-content: space-between;
+    gap: 2rem !important;
+  }
+  .contactMe{
+    margin-block: 5rem !important;
+  }
 }

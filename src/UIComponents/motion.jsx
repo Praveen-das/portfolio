@@ -7,10 +7,8 @@ export default function Motion({ children, item = false, ...props }) {
         visible: {
             opacity: 1,
             transition: {
-                // delay:0.2,
-                duration: 0.3,
+                duration: 2,
                 delayChildren: 0.1,
-                staggerChildren: 0.1,
             },
         },
     }
