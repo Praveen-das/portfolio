@@ -159,61 +159,72 @@ html.lenis {
 
 }
 
+@media (min-width: 481px) {
+  #header_mobile {
+    display: none !important;
+  }
+}
+
 @media (max-width: 480px) {
   #header {
     display: none !important;
   }
-  #navbar{
+
+  #header_mobile {
+    display: flex;
     position: fixed;
-    right: 0;
+    background: var(--border_bottom);
+    width: 100%;
+    height: 5rem !important;
+    padding: 2rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #navbar {
+    position: fixed;
     top: 0;
     bottom: 0;
+    right: 0;
     width: 0%;
-    height: 100%;
-    background: #000;
+    height: 5rem;
+    background: rgb(22, 22, 22);
     z-index: 200;
     transition: 1s;
   }
-  .navbar--active{
-    width: 70% !important;
+
+  .navbar--active {
+    width: 75% !important;
 
   }
+
   #backdrop {
     position: fixed;
     top: 5rem;
     bottom: 0;
     right: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.192);
-    transition: 0.2s;
+    background-color: rgb(20 20 20 / 84%);
+    backdrop-filter: blur(20px);
     opacity: 0;
-    transition: 0.2s;
+    transition: 0.5s;
     z-index: -1;
+    pointer-events: none;
   }
 
   .backdrop--active {
     display: block !important;
     opacity: 1 !important;
     z-index: 100 !important;
-    backdrop-filter: blur(5px);
-  }
-
-  #header_mobile {
-    background: var(--border_bottom);
-    width: 100%;
-    height: 5rem !important;
-    padding: 2rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    pointer-events: all !important;
   }
 
   #logo {
     font-size: 1.6rem !important;
   }
 
-  .nav_icon {
+  .hamberger {
     position: relative;
     width: 20px;
     height: 15px;
@@ -222,7 +233,7 @@ html.lenis {
     translate: -50px 26px;
   }
 
-  .nav_icon span {
+  .hamberger span {
     position: absolute;
     width: 100%;
     height: 2px;
@@ -231,39 +242,54 @@ html.lenis {
     transform-origin: center;
     top: 0;
     translate: 0 -50%;
+    transition: 1s;
   }
 
-  .nav_icon span:nth-child(2) {
+  .hamberger span:nth-child(2) {
     top: 50%;
   }
 
-  .nav_icon span:nth-child(3) {
+  .hamberger span:nth-child(3) {
     top: 100%;
   }
 
-  .nav_icon--active {
+  .hamberger--active {
     justify-content: center !important;
-    rotate: -90deg;
+    rotate: -180deg;
     translate: 30px 26px;
   }
 
-  .nav_icon--active span:nth-child(2) {
+  .hamberger--active span:nth-child(2) {
     opacity: 0;
-    display: none;
+    /* display: none; */
   }
 
-  .nav_icon--active span:nth-child(1) {
+  .hamberger--active span:nth-child(1) {
     top: 50%;
     rotate: 45deg;
   }
 
-  .nav_icon--active span:nth-child(3) {
+  .hamberger--active span:nth-child(3) {
     top: 50%;
     rotate: -45deg;
   }
 
+  .navbar_items {
+    position: fixed;
+    top: 5rem;
+    bottom: 5rem;
+    background: rgb(22, 22, 22);
+    height: 100%;
+    width: 100%;
+    padding: 2rem 3rem;
+    display: grid;
+    gap: 4rem;
+    border-top: 2px solid rgba(0, 0, 0, 0.11);
+    align-content: flex-start;
+  }
+
   :root {
-    --gutter: 5rem !important;
+    --gutter: 8rem !important;
     --padding: 3rem 2rem;
     --padding_bottom: 4rem !important;
     --hero_name: 3rem !important;
@@ -281,9 +307,9 @@ html.lenis {
   }
 
   .hero_content {
-    padding-block: 10rem 5rem !important;
-    height: 100vh;
-    height: 100svh;
+    padding-block: 10rem var(--gutter) !important;
+    min-height: 100vh;
+    min-height: 100svh;
   }
 
   #hero_desc,
@@ -306,7 +332,7 @@ html.lenis {
 
   .h6 {
     font-size: 1.7rem;
-    line-height: 1.8rem;
+    line-height: 2rem;
   }
 
   .skills {

@@ -11,7 +11,7 @@ export default function About({ style }) {
             transition: {
                 duration: 0.5,
                 delayChildren: 0.2,
-                staggerChildren: 0.02
+                staggerChildren: 0.03
             }
         }
     }
