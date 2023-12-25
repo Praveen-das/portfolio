@@ -39,7 +39,7 @@
   color: rgba(255, 255, 255, 0.87);
   --blob: hsl(0, 100%, 51%);
   --bg_main: hsl(140, 75%, 37%);
-  --border_bottom: hsla(0, 0%, 0%, 0.2);
+  --border_bottom: hsl(0deg 0% 8.02%);
 
   --padding: 3rem;
   --padding_bottom: 4rem;

@@ -163,6 +163,104 @@ html.lenis {
   #header {
     display: none !important;
   }
+  #navbar{
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 0%;
+    height: 100%;
+    background: #000;
+    z-index: 200;
+    transition: 1s;
+  }
+  .navbar--active{
+    width: 70% !important;
+
+  }
+  #backdrop {
+    position: fixed;
+    top: 5rem;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.192);
+    transition: 0.2s;
+    opacity: 0;
+    transition: 0.2s;
+    z-index: -1;
+  }
+
+  .backdrop--active {
+    display: block !important;
+    opacity: 1 !important;
+    z-index: 100 !important;
+    backdrop-filter: blur(5px);
+  }
+
+  #header_mobile {
+    background: var(--border_bottom);
+    width: 100%;
+    height: 5rem !important;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #logo {
+    font-size: 1.6rem !important;
+  }
+
+  .nav_icon {
+    position: relative;
+    width: 20px;
+    height: 15px;
+    transition: 1s;
+    z-index: 300;
+    translate: -50px 26px;
+  }
+
+  .nav_icon span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    opacity: 1;
+    transform-origin: center;
+    top: 0;
+    translate: 0 -50%;
+  }
+
+  .nav_icon span:nth-child(2) {
+    top: 50%;
+  }
+
+  .nav_icon span:nth-child(3) {
+    top: 100%;
+  }
+
+  .nav_icon--active {
+    justify-content: center !important;
+    rotate: -90deg;
+    translate: 30px 26px;
+  }
+
+  .nav_icon--active span:nth-child(2) {
+    opacity: 0;
+    display: none;
+  }
+
+  .nav_icon--active span:nth-child(1) {
+    top: 50%;
+    rotate: 45deg;
+  }
+
+  .nav_icon--active span:nth-child(3) {
+    top: 50%;
+    rotate: -45deg;
+  }
 
   :root {
     --gutter: 5rem !important;
@@ -171,9 +269,11 @@ html.lenis {
     --hero_name: 3rem !important;
     font-size: 14px;
   }
-  #pointer{
+
+  #pointer {
     display: none;
   }
+
   section {
     padding-inline: 15px;
     text-align: center;
@@ -181,7 +281,7 @@ html.lenis {
   }
 
   .hero_content {
-    padding-block: 5rem 5rem !important;
+    padding-block: 10rem 5rem !important;
     height: 100vh;
     height: 100svh;
   }
@@ -231,7 +331,12 @@ html.lenis {
     justify-content: space-between;
     gap: 2rem !important;
   }
-  .contactMe{
+
+  .contactMe {
     margin-block: 5rem !important;
+  }
+
+  #works {
+    padding-bottom: 0;
   }
 }
