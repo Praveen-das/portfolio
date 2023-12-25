@@ -88,7 +88,7 @@ export default function HeroSection() {
                             ))
                         }
                     </motion.div>
-                    {/* <motion.div
+                    <motion.div
                         variants={hero_desc}
                         id='hero_desc'
                         className='absolute'
@@ -101,7 +101,7 @@ export default function HeroSection() {
                                 </motion.label>
                             ))
                         }
-                    </motion.div> */}
+                    </motion.div>
                 </div>
             </motion.div>
         </section>

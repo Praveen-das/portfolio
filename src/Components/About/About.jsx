@@ -63,7 +63,7 @@ export default function About({ style }) {
                             about?.map((letter, key) => (
                                 <div variants={items} key={key}>
                                     <motion.div variants={items} className='h6' htmlFor="">{letter}</motion.div>
-                                    {/* <motion.div variants={items_wireframe} className='h6 absolute wireframe' htmlFor="">{letter}</motion.div> */}
+                                    <motion.div variants={items_wireframe} className='h6 absolute wireframe' htmlFor="">{letter}</motion.div>
                                 </div>
                             ))
                         }
