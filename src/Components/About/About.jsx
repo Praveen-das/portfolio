@@ -1,11 +1,9 @@
-import React, { useEffect, useLayoutEffect, useRef } from 'react'
+import React from 'react'
+import {  motion } from 'framer-motion'
+
 import './about.css'
-import { useAnimate, useInView, motion } from 'framer-motion'
-import SplitType from 'split-type'
 
 export default function About() {
-    let FROM = 'inset(0 0 100% 0)'
-    let TO = 'inset(0% 0% 0% 0)'
 
     const container = {
         visible: {
