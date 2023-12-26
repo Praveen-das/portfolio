@@ -12,10 +12,13 @@
   "dependencies": {
     "@react-spring/web": "^9.7.3",
     "@studio-freight/lenis": "^1.0.29",
+    "@supercharge/strings": "^2.0.0",
     "framer-motion": "^10.16.16",
+    "linebreak": "^1.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "resize-observer-polyfill": "^1.5.1",
+    "split-type": "^0.2.1",
     "vite-plugin-svgr": "^4.2.0"
   },
   "devDependencies": {

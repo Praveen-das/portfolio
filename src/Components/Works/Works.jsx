@@ -30,7 +30,7 @@ export default function Works() {
         visible: {
             transition: {
                 delayChildren: 0.2,
-                staggerChildren: 0.1,
+                staggerChildren: 0.5,
             },
         }
     }
@@ -47,7 +47,18 @@ export default function Works() {
             translateY: 0,
             transition: {
                 duration: 0.5,
-                // ease:'easeOut'
+            },
+        }
+    }
+
+    const sub_item = {
+        hidden: {
+            opacity: 0,
+        },
+        visible: {
+            opacity: 1,
+            transition: {
+                duration: 1,
             },
         }
     }
@@ -66,9 +77,10 @@ export default function Works() {
                                 initial='hidden'
                                 whileInView='visible'
                                 variants={container}
-                                key={area} className="project">
-                                <motion.label key={area} variants={item} id='hero_desc' className='project_title' htmlFor="">{area}</motion.label>
-                                <motion.label variants={item} className='h5' htmlFor="">{desc}</motion.label>
+                                key={area} className="project"
+                            >
+                                <motion.label variants={item} key={area} id='hero_desc' className='project_title' htmlFor="">{area}</motion.label>
+                                <motion.label variants={sub_item} className='h5' htmlFor="">{desc}</motion.label>
                             </motion.div>
                         ))
                     }

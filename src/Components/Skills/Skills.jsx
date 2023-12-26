@@ -45,9 +45,9 @@ function Skills() {
     const container = {
         visible: {
             transition: {
-                delayChildren: 0.2,
-                staggerChildren: 0.1,
-            },
+                staggerChildren: 0.5,
+                delayChildren: 0.2
+            }
         }
     }
 
@@ -65,39 +65,9 @@ function Skills() {
         }
     }
 
-    const title_wireframe = {
-        hidden: {
-            clipPath: FROM,
-            opacity: 0,
-        },
-        visible: {
-            clipPath: TO,
-            opacity: 1,
-            transition: {
-                duration: 0.75
-            },
-        }
-    }
-
-    const skill_wrapper = {
-        visible: {
-            transition: {
-                delayChildren: 0.8,
-                // staggerChildren: 0.1,
-            },
-        }
-    }
-
-    const skill_variant = {
-        hidden: {
-            opacity: 0,
-        },
-        visible: {
-            opacity: 1,
-            transition: {
-                duration: 0.5
-            }
-        }
+    const opacity = {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { delay: 1, duration: 1 } }
     }
 
     return (
@@ -108,36 +78,32 @@ function Skills() {
             <div className="skills_wrapper">
                 <label className='title' htmlFor="">SKILLS</label>
                 <motion.div
-
                     id="expertise"
                 >
                     {
-                        Object.entries(collection).map(([area, skills]) => (
+                        Object.entries(collection).map(([area, skills], i) => (
                             <motion.div
                                 key={area}
-                                variants={container}
                                 initial='hidden'
+                                variants={container}
                                 whileInView='visible'
                                 className="skills"
                             >
                                 <div className="skill_area--wrapper">
-                                    <div className='characters'>
-                                        <motion.label variants={title} className='skill_area h6' htmlFor="">{area}</motion.label>
-                                        <motion.label variants={title_wireframe} className='skill_area h6 absolute wireframe' htmlFor="">{area}</motion.label>
-                                    </div>
+                                    <motion.label variants={title} className='skill_area h6' htmlFor="">{area}</motion.label>
+                                    <motion.label variants={opacity} className='skill_area h6 absolute wireframe' htmlFor="">{area}</motion.label>
                                 </div>
-                                <motion.div variants={skill_wrapper} className="skill_wrapper">
+                                <motion.div variants={opacity} className="skill_wrapper">
                                     {
                                         skills.map((skill, i) => (
-                                            <motion.label
-                                                variants={skill_variant}
+                                            <label
                                                 className='h5'
                                                 key={skill}
                                                 htmlFor="skill"
                                             >
                                                 {skill}
                                                 {skills.length === i + 1 ? '' : ','}
-                                            </motion.label>
+                                            </label>
                                         ))
                                     }
                                 </motion.div>

@@ -21,6 +21,7 @@
 }
 .skill_area--wrapper{
     display: flex;
+    position: relative;
 }
 .characters{
     position: relative;

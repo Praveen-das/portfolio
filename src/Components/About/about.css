@@ -1,3 +1,7 @@
+.about,
+.about_wrapper{
+    width: 100%;
+}
 .about_wrapper {
     position: relative;
     display: flex;
@@ -6,6 +10,7 @@
 }
 
 .about_wrapper .h6 {
+    font-kerning: none;p
     position: relative;
     z-index: 100;
 }

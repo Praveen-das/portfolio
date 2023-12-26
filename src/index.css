@@ -49,10 +49,10 @@
   --gutter: 10rem;
 
 
-  /* font-synthesis: none;
+  font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
+  -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg_main);
   background-color: #181818;
 }
@@ -69,15 +69,6 @@ body,
 *:before,
 *:after {
   box-sizing: border-box;
-}
-
-/* *:first-letter, */
-label {
-  /* margin-left: -0.065em; */
-}
-
-label::after {
-  /* margin-left: 0.065em; */
 }
 
 label,

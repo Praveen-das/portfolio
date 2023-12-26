@@ -17,21 +17,21 @@ export default function ContactMe() {
                     <label
                         className='h6'
                         htmlFor="send me a mail"
-                        
+
                     >
                         JUST SEND ME A <a href='mailto:praveendask97@gmail.com'>MAIL</a>
                     </label>
                     <div className="links h5">
-                        <SnapingButton className='icon_button'>
+                        <SnapingButton onClick={() => window.open('https://github.com/Praveen-das')} className='icon_button'>
                             <GithubLogo width={25} height={25} />
                         </SnapingButton>
-                        <SnapingButton className='icon_button'>
+                        <SnapingButton onClick={() => window.open('https://www.linkedin.com/in/praveen-das-625631136/')} className='icon_button'>
                             <LinkedInLogo width={25} height={25} />
                         </SnapingButton>
-                        <SnapingButton className='icon_button'>
+                        <SnapingButton onClick={() => window.open('https://www.instagram.com/_praveendas_/')} className='icon_button'>
                             <InstagramLogo width={25} height={25} />
                         </SnapingButton>
-                        <SnapingButton className='icon_button'>
+                        <SnapingButton onClick={() => window.open('https://www.facebook.com/praveen.das.94651/')} className='icon_button'>
                             <FacebookLogo width={25} height={25} />
                         </SnapingButton>
                     </div>

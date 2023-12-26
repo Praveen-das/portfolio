@@ -43,16 +43,12 @@ export default function HeroSection() {
         }
         , fractions_wireframe = {
             hidden: {
-                "--clip": FROM,
-                // translateX: -10,
                 opacity: 0,
             },
             visible: {
-                "--clip": TO,
-                translateX: 0,
                 opacity: 1,
                 transition: {
-                    duration: 0.8
+                    duration: 2
                 },
             }
         };

@@ -7,22 +7,28 @@ import About from './Components/About/About'
 import Skills from './Components/Skills/Skills'
 import Projects from './Components/Works/Works'
 import Lenis from '@studio-freight/lenis'
-import { useLayoutEffect, utEffect, useRef } from 'react'
+import { useLayoutEffect, utEffect, useRef, useEffect } from 'react'
 import ContactMe from './Components/ContactMe/ContactMe'
 
 
-let lenis = new Lenis()
+let lenis
+
+if (window.innerWidth > 480) {
+  lenis = new Lenis()
+}
+
+function animate(time) {
+  lenis.raf(time)
+  requestAnimationFrame(animate)
+}
 
 function App() {
   const raf = useRef()
 
-  function animate(time) {
-    lenis.raf(time)
-    requestAnimationFrame(animate)
-  }
-
-  useLayoutEffect(() => {
-    raf.current = requestAnimationFrame(animate)
+  useEffect(() => {
+    if (lenis) {
+      raf.current = requestAnimationFrame(animate)
+    }
 
     return () => {
       cancelAnimationFrame(raf.current)
