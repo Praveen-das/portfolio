@@ -45,8 +45,7 @@ function Skills() {
     const container = {
         visible: {
             transition: {
-                staggerChildren: 0.5,
-                delayChildren: 0.2
+                // delayChildren: 0.2
             }
         }
     }
@@ -65,9 +64,23 @@ function Skills() {
         }
     }
 
+    const title_wireframe = {
+        hidden: {
+            clipPath: FROM,
+            opacity: 0,
+        },
+        visible: {
+            clipPath: TO,
+            opacity: 1,
+            transition: {
+                duration: 0.8,
+            },
+        }
+    }
+
     const opacity = {
         hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { delay: 1, duration: 1 } }
+        visible: { opacity: 1, transition: { delay: 0.5, duration: 1 } }
     }
 
     return (
@@ -91,7 +104,7 @@ function Skills() {
                             >
                                 <div className="skill_area--wrapper">
                                     <motion.label variants={title} className='skill_area h6' htmlFor="">{area}</motion.label>
-                                    <motion.label variants={opacity} className='skill_area h6 absolute wireframe' htmlFor="">{area}</motion.label>
+                                    <motion.label variants={title_wireframe} className='skill_area h6 absolute wireframe' htmlFor="">{area}</motion.label>
                                 </div>
                                 <motion.div variants={opacity} className="skill_wrapper">
                                     {

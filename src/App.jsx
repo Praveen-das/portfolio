@@ -14,7 +14,9 @@ import ContactMe from './Components/ContactMe/ContactMe'
 let lenis
 
 if (window.innerWidth > 480) {
-  lenis = new Lenis()
+  lenis = new Lenis({
+    lerp: 0.075
+  })
 }
 
 function animate(time) {
