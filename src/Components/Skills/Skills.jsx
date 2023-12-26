@@ -45,7 +45,7 @@ function Skills() {
     const container = {
         visible: {
             transition: {
-                // delayChildren: 0.2
+                delayChildren: 0.2
             }
         }
     }
