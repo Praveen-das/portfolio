@@ -37,6 +37,7 @@ section {
   padding-inline: 16rem 5rem;
   margin-bottom: 1px;
   /* padding-block: 15rem; */
+  scroll-snap-type: y mandatory;
   scroll-margin-top: -3rem;
 }
 
@@ -168,135 +169,9 @@ html.lenis {
 
 }
 
-@media (min-width: 481px) {
-  #header_mobile {
-    display: none !important;
-  }
-}
+
 
 @media (max-width: 480px) {
-  #header {
-    display: none !important;
-  }
-
-  #header_mobile {
-    display: flex;
-    position: fixed;
-    background: var(--border_bottom);
-    width: 100%;
-    height: 5rem !important;
-    padding: 2rem;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  #navbar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 0%;
-    height: 5rem;
-    background: rgb(22, 22, 22);
-    z-index: 200;
-    transition: 1s;
-  }
-
-  .navbar--active {
-    width: 75% !important;
-
-  }
-
-  #backdrop {
-    position: fixed;
-    top: 5rem;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    background-color: rgb(20 20 20 / 84%);
-    backdrop-filter: blur(20px);
-    opacity: 0;
-    transition: 0.5s;
-    z-index: -1;
-    pointer-events: none;
-  }
-
-  .backdrop--active {
-    display: block !important;
-    opacity: 1 !important;
-    z-index: 100 !important;
-    pointer-events: all !important;
-  }
-
-  #logo {
-    font-size: 1.6rem !important;
-  }
-
-  .hamberger {
-    position: relative;
-    width: 20px;
-    height: 15px;
-    transition: 1s;
-    z-index: 300;
-    translate: -50px 26px;
-  }
-
-  .hamberger span {
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #ffffff;
-    opacity: 1;
-    transform-origin: center;
-    top: 0;
-    translate: 0 -50%;
-    transition: 1s;
-  }
-
-  .hamberger span:nth-child(2) {
-    top: 50%;
-  }
-
-  .hamberger span:nth-child(3) {
-    top: 100%;
-  }
-
-  .hamberger--active {
-    justify-content: center !important;
-    rotate: -180deg;
-    translate: 30px 26px;
-  }
-
-  .hamberger--active span:nth-child(2) {
-    opacity: 0;
-    /* display: none; */
-  }
-
-  .hamberger--active span:nth-child(1) {
-    top: 50%;
-    rotate: 45deg;
-  }
-
-  .hamberger--active span:nth-child(3) {
-    top: 50%;
-    rotate: -45deg;
-  }
-
-  .navbar_items {
-    position: fixed;
-    top: 5rem;
-    bottom: 5rem;
-    background: rgb(22, 22, 22);
-    height: 100%;
-    width: 100%;
-    padding: 2rem 3rem;
-    display: grid;
-    gap: 4rem;
-    border-top: 2px solid rgba(0, 0, 0, 0.11);
-    align-content: flex-start;
-  }
-
   :root {
     --gutter: 12rem !important;
     --padding: 3rem 2rem;

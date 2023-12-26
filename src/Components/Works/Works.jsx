@@ -64,11 +64,12 @@ export default function Works() {
     }
 
     return (
-        <section id='works' className='gutter' >
-            <div
-
-                className="projects_wrapper"
-            >
+        <motion.section
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, transition: { delay: 0.2 } }}
+            id='works' className='gutter'
+        >
+            <div className="projects_wrapper">
                 <label className='title' htmlFor="FEATURED PROJECTS">FEATURED PROJECTS</label>
                 <div id="projects">
                     {
@@ -86,7 +87,7 @@ export default function Works() {
                     }
                 </div>
             </div>
-        </section>
+        </motion.section>
     )
 }
 

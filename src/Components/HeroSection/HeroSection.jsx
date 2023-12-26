@@ -56,12 +56,15 @@ export default function HeroSection() {
     let words = text.split(' ')
 
     return (
-        <section id='#/'>
+        <motion.section
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, transition: { delay: 0.2 } }}
+            animate='visible'
+            id='#/'
+        >
             <div className='hero_content'>
                 <motion.label
                     variants={hero_name}
-                    initial='hidden'
-                    animate='visible'
                     className='hero_name'
                     htmlFor="hero_name"
                 >
@@ -86,6 +89,6 @@ export default function HeroSection() {
                     </motion.div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     )
 }

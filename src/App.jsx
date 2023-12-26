@@ -1,5 +1,4 @@
 import './App.css'
-import Blobs from './Components/Blobs/Blobs'
 import Header from './Components/Header/Header'
 import HeroSection from './Components/HeroSection/HeroSection'
 import Pointer from './Components/Pointer/Pointer'
@@ -7,17 +6,13 @@ import About from './Components/About/About'
 import Skills from './Components/Skills/Skills'
 import Projects from './Components/Works/Works'
 import Lenis from '@studio-freight/lenis'
-import { useLayoutEffect, utEffect, useRef, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import ContactMe from './Components/ContactMe/ContactMe'
 
 
-let lenis
-
-if (window.innerWidth > 480) {
-  lenis = new Lenis({
-    lerp: 0.075
-  })
-}
+let lenis = new Lenis({
+  lerp: 0.075
+})
 
 function animate(time) {
   lenis.raf(time)

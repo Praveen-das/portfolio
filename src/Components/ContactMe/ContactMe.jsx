@@ -3,15 +3,27 @@ import GithubLogo from '../../assets/icons/github.svg?react'
 import LinkedInLogo from '../../assets/icons/linkedin.svg?react'
 import InstagramLogo from '../../assets/icons/instagram.svg?react'
 import FacebookLogo from '../../assets/icons/facebook.svg?react'
+import { motion } from 'framer-motion'
 
 import './contactMe.css'
 
 import React from 'react'
 
 export default function ContactMe() {
+    const container = {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { delay: 0.2 } }
+    }
     return (
-        <section className='dark' id='contactme'>
-            <div className="contactMe">
+        <section
+            className='dark gutter' id='contactme'
+        >
+            <motion.div
+                initial='hidden'
+                whileInView='visible'
+                variants={container}
+                className="contactMe"
+            >
                 <label className='title' htmlFor="contact_me_title">CONTACT ME</label>
                 <div className="contents">
                     <label
@@ -41,7 +53,7 @@ export default function ContactMe() {
                         <a className='resume' href='../../assets/icons/facebook.svg' download htmlFor="Download Resume">Download Resume</a>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     )
 }

@@ -84,13 +84,15 @@ function Skills() {
     }
 
     return (
-        <section
+        <motion.section
             id='skills'
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, transition: { delay: 0.2 } }}
             className='gutter-top'
         >
             <div className="skills_wrapper">
                 <label className='title' htmlFor="">SKILLS</label>
-                <motion.div
+                <div
                     id="expertise"
                 >
                     {
@@ -123,9 +125,9 @@ function Skills() {
                             </motion.div>
                         ))
                     }
-                </motion.div>
+                </div>
             </div>
-        </section>
+        </motion.section>
     )
 }
 

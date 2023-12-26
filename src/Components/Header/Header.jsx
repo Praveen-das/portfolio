@@ -12,7 +12,7 @@ export default function Header() {
       document.body.style.overflow = 'unset'
     }
   }, [navActive])
-
+  console.log(navActive);
   return (
     <>
       <header id='header'>
@@ -25,21 +25,22 @@ export default function Header() {
         </div>
       </header>
       <header id='header_mobile'>
-        <div id="backdrop" onClick={() => setNavActive(false)} className={`${navActive ? 'backdrop--active' : ''}`}></div>
-        <div id="navbar" className={`${navActive ? 'navbar--active' : ''}`}>
-          <div className={`hamberger ${navActive ? 'hamberger--active' : ''}`} onClick={() => setNavActive(s => !s)}>
+        <div id="backdrop" onClick={() => setNavActive(false)} className={`${navActive ? 'active' : ''}`}></div>
+        {/* ///////////////////////////////////////////////////// */}
+        <a onClick={() => setNavActive(false)} href='/#' id='logo'>p.dev</a>
+        <div className={`drawer ${navActive ? 'active' : ''}`}>
+          <div className={`hamberger ${navActive ? 'active' : ''}`} onClick={() => setNavActive(s => !s)}>
             <span />
             <span />
             <span />
           </div>
-          <div className="navbar_items">
+          <div className="items">
             <a onClick={() => setNavActive(false)} href='#about' className='h5' htmlFor="">ABOUT</a>
             <a onClick={() => setNavActive(false)} href='#skills' className='h5' htmlFor="">SKILLS</a>
             <a onClick={() => setNavActive(false)} href='#works' className='h5' htmlFor="">WORKS</a>
             <a onClick={() => setNavActive(false)} href='#contactme' className='h5' htmlFor="">CONTACT ME</a>
           </div>
         </div>
-        <a href='/#' id='logo'>p.dev</a>
       </header>
     </>
   )
