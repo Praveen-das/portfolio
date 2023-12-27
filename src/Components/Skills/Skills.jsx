@@ -25,12 +25,12 @@ const collection = {
         "TypeScript",
     ],
     Tools: [
+        "Docker",
         "Git",
         "ChromeDevTools",
         "Figma",
     ],
     "Interests": [
-        "DevOps",
         "ThreeJs",
         "Blender",
         "Rust",

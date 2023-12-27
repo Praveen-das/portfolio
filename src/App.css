@@ -33,7 +33,7 @@ main {
 section {
   display: flex;
   align-items: center;
-  /* min-height: 100vh; */
+  min-height: 100vh;
   padding-inline: 16rem 5rem;
   margin-bottom: 1px;
   /* padding-block: 15rem; */
@@ -116,6 +116,15 @@ html.lenis {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+@media (min-width: 1600px) {
+  :root{
+    font-size: 20px;
+  }
+  section {
+    padding-inline: 14rem 5rem;
+  }
 }
 
 @media (max-width: 1200px) {
