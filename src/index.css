@@ -1,69 +1,97 @@
 @font-face {
-  font-family: "Bebas Neue";
-  src:
-    local("BebasNeue"),
-    url('./assets/font/BebasNeue.woff2') format("woff2");
+  font-family: "Deutschlander";
+  src: url("./assets/font/Deutschlander.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'League Gothic';
-  src: url('./assets/font/LeagueGothic-Regular.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* @font-face {
-  font-family: 'Josefin Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/josefinsans/v32/Qw3aZQNVED7rKGKxtqIqX5EUDXx4.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-} */
-
-@font-face {
-  font-family: 'Josefin Sans';
-  src: url('./assets/font/JosefinSans.ttf') format('truetype');
+  font-family: "Mohave";
+  src: url("./assets/font/Mohave-Bold.otf") format("opentype");
+  font-weight: bold;
 }
 
 @font-face {
-  font-family: 'Roboto', sans-serif;
-  src:
-    local("Roboto"),
-    url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+  font-family: "Ioannina";
+  src: url("./assets/font/ioannina.bold.otf") format("opentype");
+  font-weight: bold;
 }
+
+@font-face {
+  font-family: "Heathergreen";
+  src: url("./assets/font/heathergreen.regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "League Gothic Variable";
+  src: url("./assets/font/LeagueGothic-Regular-VariableFont_wdth.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "DrukCond";
+  src: url("./assets/font/Druk_Collection/DrukCondensedFamily/DrukXCond-Super-Trial.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Druk";
+  src: url("./assets/font/Druk_Collection/DrukFamily/Druk-Medium-Trial.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "DrukWide";
+  src: url("./assets/font/Druk_Collection/DrukWideFamily/DrukWide-Medium-Trial.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "DrukText";
+  src: url("./assets/font/Druk_Collection/DrukTextFamily/DrukText-Medium-Trial.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "DrukTextWide";
+  src: url("./assets/font/Druk_Collection/DrukTextWideFamily/DrukTextWide-Medium-Trial.otf") format("opentype");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-family: Josefin Sans;
+  /* Typography */
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  --font-hero: "DrukCond", sans-serif;
+  --font-display: "Druk", sans-serif;
+  --font-subheading: monospace, sans-serif;
 
-  color: rgba(255, 255, 255, 0.87);
-  --blob: hsl(0, 100%, 51%);
-  --bg_main: hsl(140, 75%, 37%);
-  --border_bottom: hsl(0deg 0% 8.02%);
+  /* Colors */
+  --bg-primary: #0a0a0a;
+  --accent: #ffffff;
+  --accent-rgb: 255, 255, 255;
+  --text-primary: #ffffff;
+  --text-secondary: rgb(255 255 255 / 65%);
 
-  --padding: 3rem;
-  --padding_bottom: 4rem;
-  --base_font_size: 1rem;
-  --hero_name: 5rem;
-  --ml: -0.065em;
-  --gutter: 10rem;
-
-
+  color: var(--text-primary);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--bg_main);
-  background-color: #181818;
+  background-color: var(--bg-primary);
+  transition: background-color 0.5s ease;
 }
 
 html,
-body,
-#root {
+body {
   margin: 0;
-  height: 10 0%;
+  padding: 0;
+  height: 100%;
+  overflow-x: clip;
 }
 
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 
 *,
 *:before,
@@ -71,19 +99,48 @@ body,
   box-sizing: border-box;
 }
 
-label,
-p {
-  display: block;
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
-  margin-bottom: -0.3em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
 }
 
 ::-webkit-scrollbar {
-  background-color: rgba(0, 0, 0, 0.466);
-  width: 3px;
+  display: none;
 }
 
-::-webkit-scrollbar-thumb {
-  /* display: none; */
-  background-color: rgba(255, 255, 255, 0.24);
+.display-font {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  /* line-height: 0.85; */
+}
+
+.sub-font {
+  font-family: var(--font-subheading);
+  text-transform: uppercase;
+  font-size: large;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.hero-font {
+  font-family: var(--font-hero);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }

@@ -7,8 +7,13 @@
     height: var(--size);
     border-radius: 50%;
     cursor: pointer;
+    transition: transform 160ms ease-out;
 }
+
+.icon_button:active {
+    transform: scale(0.97);
+}
+
 .icon_wrapper{
     pointer-events: none;
 }
-

@@ -1,0 +1,186 @@
+{
+  "communities": {
+    "0": [
+      "artworld_project",
+      "chatsphere_project",
+      "disneyplus_project",
+      "index_fullstackdeveloper",
+      "index_praveendas",
+      "readme_react"
+    ],
+    "1": [
+      "snapingbutton_getthresholdvalue",
+      "snapingbutton_handlemovement",
+      "snapingbutton_snapingbutton",
+      "src_uicomponents_snapingbutton_jsx"
+    ],
+    "2": [
+      "app_animate",
+      "app_app",
+      "src_app_jsx"
+    ],
+    "3": [
+      "bubblepointer_bubblepointer",
+      "bubblepointer_bubblescene",
+      "src_components_pointer_bubblepointer_jsx"
+    ],
+    "4": [
+      "skills_skillrow",
+      "skills_skills",
+      "src_components_skills_skills_jsx"
+    ],
+    "5": [
+      "about_about",
+      "src_components_about_about_jsx"
+    ],
+    "6": [
+      "contactme_contactme",
+      "src_components_contactme_contactme_jsx"
+    ],
+    "7": [
+      "header_header",
+      "src_components_header_header_jsx"
+    ],
+    "8": [
+      "herosection_herosection",
+      "src_components_herosection_herosection_jsx"
+    ],
+    "9": [
+      "pointer_pointer",
+      "src_components_pointer_pointer_jsx"
+    ],
+    "10": [
+      "src_components_works_works_jsx",
+      "works_works"
+    ],
+    "11": [
+      "divider_devider",
+      "src_uicomponents_divider_divider_jsx"
+    ],
+    "12": [
+      "vite_config_js"
+    ],
+    "13": [
+      "src_main_jsx"
+    ],
+    "14": [
+      "src_lib_framer_js"
+    ],
+    "15": [
+      "readme_vite"
+    ]
+  },
+  "cohesion": {
+    "0": 0.33,
+    "1": 0.5,
+    "2": 0.67,
+    "3": 0.67,
+    "4": 0.67,
+    "5": 1.0,
+    "6": 1.0,
+    "7": 1.0,
+    "8": 1.0,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0
+  },
+  "gods": [
+    {
+      "id": "index_praveendas",
+      "label": "Praveen Das",
+      "degree": 5
+    },
+    {
+      "id": "index_fullstackdeveloper",
+      "label": "Full Stack Developer",
+      "degree": 1
+    },
+    {
+      "id": "readme_react",
+      "label": "React",
+      "degree": 1
+    },
+    {
+      "id": "artworld_project",
+      "label": "Artworld Project",
+      "degree": 1
+    },
+    {
+      "id": "chatsphere_project",
+      "label": "Chatsphere Project",
+      "degree": 1
+    },
+    {
+      "id": "disneyplus_project",
+      "label": "Disney Plus Project",
+      "degree": 1
+    },
+    {
+      "id": "readme_vite",
+      "label": "Vite",
+      "degree": 0
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Artworld Project",
+      "target": "Praveen Das",
+      "source_files": [
+        "src\\assets\\projects\\artworld.png",
+        "index.html"
+      ],
+      "confidence": "INFERRED",
+      "relation": "built_by",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc \u2194 image); connects across different repos/directories; peripheral node `Artworld Project` unexpectedly reaches hub `Praveen Das`"
+    },
+    {
+      "source": "Chatsphere Project",
+      "target": "Praveen Das",
+      "source_files": [
+        "src\\assets\\projects\\chatsphere.png",
+        "index.html"
+      ],
+      "confidence": "INFERRED",
+      "relation": "built_by",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc \u2194 image); connects across different repos/directories; peripheral node `Chatsphere Project` unexpectedly reaches hub `Praveen Das`"
+    },
+    {
+      "source": "Disney Plus Project",
+      "target": "Praveen Das",
+      "source_files": [
+        "src\\assets\\projects\\disneyplus.png",
+        "index.html"
+      ],
+      "confidence": "INFERRED",
+      "relation": "built_by",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc \u2194 image); connects across different repos/directories; peripheral node `Disney Plus Project` unexpectedly reaches hub `Praveen Das`"
+    },
+    {
+      "source": "Praveen Das",
+      "target": "React",
+      "source_files": [
+        "index.html",
+        "README.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `React` unexpectedly reaches hub `Praveen Das`"
+    }
+  ],
+  "questions": [
+    {
+      "type": "verify_inferred",
+      "question": "Are the 4 inferred relationships involving `Praveen Das` (e.g. with `React` and `Artworld Project`) actually correct?",
+      "why": "`Praveen Das` has 4 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `Full Stack Developer`, `React`, `Vite` to the rest of the system?",
+      "why": "6 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "nodes": [
+    {"id": "index_praveendas", "label": "Praveen Das", "file_type": "document", "source_file": "index.html", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null},
+    {"id": "index_fullstackdeveloper", "label": "Full Stack Developer", "file_type": "document", "source_file": "index.html", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null},
+    {"id": "readme_react", "label": "React", "file_type": "document", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null},
+    {"id": "readme_vite", "label": "Vite", "file_type": "document", "source_file": "README.md", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null},
+    {"id": "artworld_project", "label": "Artworld Project", "file_type": "image", "source_file": "src\\assets\\projects\\artworld.png", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null},
+    {"id": "chatsphere_project", "label": "Chatsphere Project", "file_type": "image", "source_file": "src\\assets\\projects\\chatsphere.png", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null},
+    {"id": "disneyplus_project", "label": "Disney Plus Project", "file_type": "image", "source_file": "src\\assets\\projects\\disneyplus.png", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}
+  ],
+  "edges": [
+    {"source": "index_praveendas", "target": "index_fullstackdeveloper", "relation": "is", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "index.html", "source_location": null, "weight": 1.0},
+    {"source": "index_praveendas", "target": "readme_react", "relation": "uses", "confidence": "INFERRED", "confidence_score": 0.8, "source_file": "index.html", "source_location": null, "weight": 1.0},
+    {"source": "artworld_project", "target": "index_praveendas", "relation": "built_by", "confidence": "INFERRED", "confidence_score": 0.9, "source_file": "src\\assets\\projects\\artworld.png", "source_location": null, "weight": 1.0},
+    {"source": "chatsphere_project", "target": "index_praveendas", "relation": "built_by", "confidence": "INFERRED", "confidence_score": 0.9, "source_file": "src\\assets\\projects\\chatsphere.png", "source_location": null, "weight": 1.0},
+    {"source": "disneyplus_project", "target": "index_praveendas", "relation": "built_by", "confidence": "INFERRED", "confidence_score": 0.9, "source_file": "src\\assets\\projects\\disneyplus.png", "source_location": null, "weight": 1.0}
+  ],
+  "hyperedges": [],
+  "input_tokens": 1000,
+  "output_tokens": 500
+}

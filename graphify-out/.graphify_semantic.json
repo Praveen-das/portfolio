@@ -1,0 +1,949 @@
+{
+  "nodes": [
+    {
+      "id": "vite_config_js",
+      "label": "vite.config.js",
+      "file_type": "code",
+      "source_file": "vite.config.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_app_jsx",
+      "label": "App.jsx",
+      "file_type": "code",
+      "source_file": "src\\App.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_animate",
+      "label": "animate()",
+      "file_type": "code",
+      "source_file": "src\\App.jsx",
+      "source_location": "L17"
+    },
+    {
+      "id": "app_app",
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "src\\App.jsx",
+      "source_location": "L22"
+    },
+    {
+      "id": "src_main_jsx",
+      "label": "main.jsx",
+      "file_type": "code",
+      "source_file": "src\\main.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_about_about_jsx",
+      "label": "About.jsx",
+      "file_type": "code",
+      "source_file": "src\\Components\\About\\About.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "about_about",
+      "label": "About()",
+      "file_type": "code",
+      "source_file": "src\\Components\\About\\About.jsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_components_contactme_contactme_jsx",
+      "label": "ContactMe.jsx",
+      "file_type": "code",
+      "source_file": "src\\Components\\ContactMe\\ContactMe.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "contactme_contactme",
+      "label": "ContactMe()",
+      "file_type": "code",
+      "source_file": "src\\Components\\ContactMe\\ContactMe.jsx",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_components_header_header_jsx",
+      "label": "Header.jsx",
+      "file_type": "code",
+      "source_file": "src\\Components\\Header\\Header.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "header_header",
+      "label": "Header()",
+      "file_type": "code",
+      "source_file": "src\\Components\\Header\\Header.jsx",
+      "source_location": "L4"
+    },
+    {
+      "id": "src_components_herosection_herosection_jsx",
+      "label": "HeroSection.jsx",
+      "file_type": "code",
+      "source_file": "src\\Components\\HeroSection\\HeroSection.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "herosection_herosection",
+      "label": "HeroSection()",
+      "file_type": "code",
+      "source_file": "src\\Components\\HeroSection\\HeroSection.jsx",
+      "source_location": "L4"
+    },
+    {
+      "id": "src_components_pointer_bubblepointer_jsx",
+      "label": "BubblePointer.jsx",
+      "file_type": "code",
+      "source_file": "src\\Components\\Pointer\\BubblePointer.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "bubblepointer_bubblescene",
+      "label": "BubbleScene()",
+      "file_type": "code",
+      "source_file": "src\\Components\\Pointer\\BubblePointer.jsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "bubblepointer_bubblepointer",
+      "label": "BubblePointer()",
+      "file_type": "code",
+      "source_file": "src\\Components\\Pointer\\BubblePointer.jsx",
+      "source_location": "L85"
+    },
+    {
+      "id": "src_components_pointer_pointer_jsx",
+      "label": "Pointer.jsx",
+      "file_type": "code",
+      "source_file": "src\\Components\\Pointer\\Pointer.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "pointer_pointer",
+      "label": "Pointer()",
+      "file_type": "code",
+      "source_file": "src\\Components\\Pointer\\Pointer.jsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_components_skills_skills_jsx",
+      "label": "Skills.jsx",
+      "file_type": "code",
+      "source_file": "src\\Components\\Skills\\Skills.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "skills_skillrow",
+      "label": "SkillRow()",
+      "file_type": "code",
+      "source_file": "src\\Components\\Skills\\Skills.jsx",
+      "source_location": "L14"
+    },
+    {
+      "id": "skills_skills",
+      "label": "Skills()",
+      "file_type": "code",
+      "source_file": "src\\Components\\Skills\\Skills.jsx",
+      "source_location": "L40"
+    },
+    {
+      "id": "src_components_works_works_jsx",
+      "label": "Works.jsx",
+      "file_type": "code",
+      "source_file": "src\\Components\\Works\\Works.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "works_works",
+      "label": "Works()",
+      "file_type": "code",
+      "source_file": "src\\Components\\Works\\Works.jsx",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_lib_framer_js",
+      "label": "framer.js",
+      "file_type": "code",
+      "source_file": "src\\lib\\framer.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_uicomponents_snapingbutton_jsx",
+      "label": "SnapingButton.jsx",
+      "file_type": "code",
+      "source_file": "src\\UIComponents\\SnapingButton.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "snapingbutton_getthresholdvalue",
+      "label": "getThresholdValue()",
+      "file_type": "code",
+      "source_file": "src\\UIComponents\\SnapingButton.jsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "snapingbutton_handlemovement",
+      "label": "handleMovement()",
+      "file_type": "code",
+      "source_file": "src\\UIComponents\\SnapingButton.jsx",
+      "source_location": "L16"
+    },
+    {
+      "id": "snapingbutton_snapingbutton",
+      "label": "SnapingButton()",
+      "file_type": "code",
+      "source_file": "src\\UIComponents\\SnapingButton.jsx",
+      "source_location": "L45"
+    },
+    {
+      "id": "src_uicomponents_divider_divider_jsx",
+      "label": "Divider.jsx",
+      "file_type": "code",
+      "source_file": "src\\UIComponents\\Divider\\Divider.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "divider_devider",
+      "label": "Devider()",
+      "file_type": "code",
+      "source_file": "src\\UIComponents\\Divider\\Divider.jsx",
+      "source_location": "L4"
+    },
+    {
+      "id": "index_praveendas",
+      "label": "Praveen Das",
+      "file_type": "document",
+      "source_file": "index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "index_fullstackdeveloper",
+      "label": "Full Stack Developer",
+      "file_type": "document",
+      "source_file": "index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_react",
+      "label": "React",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_vite",
+      "label": "Vite",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "artworld_project",
+      "label": "Artworld Project",
+      "file_type": "image",
+      "source_file": "src\\assets\\projects\\artworld.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "chatsphere_project",
+      "label": "Chatsphere Project",
+      "file_type": "image",
+      "source_file": "src\\assets\\projects\\chatsphere.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "disneyplus_project",
+      "label": "Disney Plus Project",
+      "file_type": "image",
+      "source_file": "src\\assets\\projects\\disneyplus.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "vite_config_js",
+      "target": "vite",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "vite.config.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "vite_config_js",
+      "target": "plugin_react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "vite.config.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "vite_config_js",
+      "target": "vite_plugin_svgr",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "vite.config.js",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "src_app_css",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "src_components_header_header",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "src_components_herosection_herosection",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "src_components_pointer_bubblepointer",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "src_components_about_about",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "src_components_skills_skills",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "src_components_works_works",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "src_components_contactme_contactme",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "lenis",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "app_animate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "app_app",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_jsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\main.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_jsx",
+      "target": "client",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\main.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_jsx",
+      "target": "src_app_tsx",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\main.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_jsx",
+      "target": "src_index_css",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\main.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_about_about_jsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\About\\About.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_about_about_jsx",
+      "target": "framer_motion",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\About\\About.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_about_about_jsx",
+      "target": "src_components_about_about_css",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\About\\About.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_about_about_jsx",
+      "target": "about_about",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\About\\About.jsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_contactme_contactme_jsx",
+      "target": "src_assets_icons_github_svg_react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\ContactMe\\ContactMe.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_contactme_contactme_jsx",
+      "target": "src_assets_icons_linkedin_svg_react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\ContactMe\\ContactMe.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_contactme_contactme_jsx",
+      "target": "src_assets_icons_instagram_svg_react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\ContactMe\\ContactMe.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_contactme_contactme_jsx",
+      "target": "src_assets_icons_facebook_svg_react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\ContactMe\\ContactMe.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_contactme_contactme_jsx",
+      "target": "framer_motion",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\ContactMe\\ContactMe.jsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_contactme_contactme_jsx",
+      "target": "src_components_contactme_contactme_css",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\ContactMe\\ContactMe.jsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_contactme_contactme_jsx",
+      "target": "contactme_contactme",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\ContactMe\\ContactMe.jsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_header_header_jsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Header\\Header.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_header_header_jsx",
+      "target": "src_components_header_header_css",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Header\\Header.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_header_header_jsx",
+      "target": "header_header",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Header\\Header.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_herosection_herosection_jsx",
+      "target": "framer_motion",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\HeroSection\\HeroSection.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_herosection_herosection_jsx",
+      "target": "src_components_herosection_hero_css",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\HeroSection\\HeroSection.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_herosection_herosection_jsx",
+      "target": "herosection_herosection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\HeroSection\\HeroSection.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_pointer_bubblepointer_jsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Pointer\\BubblePointer.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_pointer_bubblepointer_jsx",
+      "target": "fiber",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Pointer\\BubblePointer.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_pointer_bubblepointer_jsx",
+      "target": "drei",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Pointer\\BubblePointer.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_pointer_bubblepointer_jsx",
+      "target": "three",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Pointer\\BubblePointer.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_pointer_bubblepointer_jsx",
+      "target": "bubblepointer_bubblescene",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Pointer\\BubblePointer.jsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_pointer_bubblepointer_jsx",
+      "target": "bubblepointer_bubblepointer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Pointer\\BubblePointer.jsx",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_pointer_pointer_jsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Pointer\\Pointer.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_pointer_pointer_jsx",
+      "target": "src_components_pointer_pointer_css",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Pointer\\Pointer.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_pointer_pointer_jsx",
+      "target": "web",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Pointer\\Pointer.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_pointer_pointer_jsx",
+      "target": "pointer_pointer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Pointer\\Pointer.jsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_skills_skills_jsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Skills\\Skills.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_skills_skills_jsx",
+      "target": "src_components_skills_skills_css",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Skills\\Skills.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_skills_skills_jsx",
+      "target": "framer_motion",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Skills\\Skills.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_skills_skills_jsx",
+      "target": "skills_skillrow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Skills\\Skills.jsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_skills_skills_jsx",
+      "target": "skills_skills",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Skills\\Skills.jsx",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_works_works_jsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Works\\Works.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_works_works_jsx",
+      "target": "src_components_works_works_css",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Works\\Works.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_works_works_jsx",
+      "target": "framer_motion",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Works\\Works.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_works_works_jsx",
+      "target": "src_assets_projects_artworld_png",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Works\\Works.jsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_works_works_jsx",
+      "target": "src_assets_projects_chatsphere_png",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Works\\Works.jsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_works_works_jsx",
+      "target": "src_assets_projects_disneyplus_png",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Works\\Works.jsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_works_works_jsx",
+      "target": "works_works",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\Components\\Works\\Works.jsx",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "src_uicomponents_snapingbutton_jsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\UIComponents\\SnapingButton.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_uicomponents_snapingbutton_jsx",
+      "target": "web",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\UIComponents\\SnapingButton.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_uicomponents_snapingbutton_jsx",
+      "target": "src_uicomponents_style_iconbtn_css",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\UIComponents\\SnapingButton.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_uicomponents_snapingbutton_jsx",
+      "target": "snapingbutton_getthresholdvalue",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\UIComponents\\SnapingButton.jsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_uicomponents_snapingbutton_jsx",
+      "target": "snapingbutton_handlemovement",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\UIComponents\\SnapingButton.jsx",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_uicomponents_snapingbutton_jsx",
+      "target": "snapingbutton_snapingbutton",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\UIComponents\\SnapingButton.jsx",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "src_uicomponents_divider_divider_jsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\UIComponents\\Divider\\Divider.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_uicomponents_divider_divider_jsx",
+      "target": "src_uicomponents_divider_style_css",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\UIComponents\\Divider\\Divider.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_uicomponents_divider_divider_jsx",
+      "target": "divider_devider",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\UIComponents\\Divider\\Divider.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "index_praveendas",
+      "target": "index_fullstackdeveloper",
+      "relation": "is",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "index_praveendas",
+      "target": "readme_react",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "index.html",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "artworld_project",
+      "target": "index_praveendas",
+      "relation": "built_by",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src\\assets\\projects\\artworld.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "chatsphere_project",
+      "target": "index_praveendas",
+      "relation": "built_by",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src\\assets\\projects\\chatsphere.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "disneyplus_project",
+      "target": "index_praveendas",
+      "relation": "built_by",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "src\\assets\\projects\\disneyplus.png",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 1000,
+  "output_tokens": 500
+}

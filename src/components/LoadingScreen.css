@@ -1,0 +1,99 @@
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000000;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 4rem;
+}
+
+.loading-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 1400px;
+}
+
+.loading-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.loading-brand {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+}
+
+.loading-status {
+  font-size: 0.75rem;
+  letter-spacing: 0.3rem;
+  opacity: 0.5;
+  font-weight: 500;
+}
+
+.loading-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-counter {
+  font-size: clamp(8rem, 20vw, 25rem);
+  line-height: 1;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.loading-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: white;
+  will-change: width;
+}
+
+.loading-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  letter-spacing: 0.1rem;
+  opacity: 0.4;
+}
+
+@media (max-width: 768px) {
+  .loading-screen {
+    padding: 2rem;
+  }
+  
+  .loading-counter {
+    font-size: 15vw;
+  }
+  
+  .loading-status {
+    display: none;
+  }
+}

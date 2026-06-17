@@ -1,0 +1,326 @@
+.project-slide-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-primary);
+  z-index: 95;
+  overflow: hidden;
+}
+
+.project-slide-panel-fake {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ff0000;
+  z-index: 94;
+}
+
+.project-slide-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 90;
+  cursor: pointer;
+}
+
+/* Close Button */
+.project-close-btn {
+  position: fixed;
+  top: 6rem;
+  left: 3.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+.close-btn-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.close-icon-wrapper {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.close-icon-wrapper svg {
+  color: var(--text-primary);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.close-icon-wrapper .icon-primary {
+  transform: translateX(0);
+}
+
+.close-icon-wrapper .icon-secondary {
+  transform: translateX(100%);
+}
+
+.project-close-btn:hover .close-icon-wrapper .icon-primary {
+  transform: translateX(-100%);
+}
+
+.project-close-btn:hover .close-icon-wrapper .icon-secondary {
+  transform: translateX(0);
+}
+
+.project-slide-inner {
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.project-slide-hero {
+  position: relative;
+  width: 100%;
+  padding-top: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-slide-title {
+  font-size: clamp(6rem, 18vw, 22rem);
+  line-height: 0.8;
+  margin: 0;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  z-index: 2;
+  position: relative;
+  /* margin-bottom: -2rem; */
+  text-align: center;
+  word-break: break-word;
+}
+
+.project-slide-image-container {
+  width: 100%;
+  height: 85vh;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+}
+
+.project-slide-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Content Grid */
+.project-slide-content {
+  padding: 8rem 0 12rem 0;
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  gap: 6rem;
+}
+
+/* Metadata Column */
+.project-metadata {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.metadata-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.metadata-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: var(--text-secondary);
+  font-weight: 700;
+  opacity: 0.6;
+}
+
+.metadata-value {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  font-weight: 800;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.metadata-value span {
+  font-size: inherit; /* Override global .sub-font size */
+}
+
+/* Description Column */
+.project-description-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.project-description-text {
+  color: var(--text-primary);
+  font-size: clamp(1.5rem, 3.5vw, 3rem);
+  line-height: 1.2;
+  font-weight: 400;
+  max-width: 900px;
+}
+
+/* Action Block Style (Matches Contact) */
+.project-action-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-decoration: none;
+}
+
+.project-action-block:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+.project-action-block .action-text {
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  color: transparent !important;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.project-action-block .action-text::before,
+.project-action-block .action-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  color: var(--text-primary);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-action-block .action-text::before {
+  top: 0;
+  transform: translateY(0);
+}
+
+.project-action-block .action-text::after {
+  top: 100%;
+  transform: translateY(0);
+}
+
+.project-action-block:hover .action-text::before,
+.project-action-block:hover .action-text::after {
+  transform: translateY(-100%);
+}
+
+.project-action-block .action-arrow {
+  color: var(--text-primary);
+  width: 1.4rem;
+  height: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.arrow-icon-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.arrow-icon-wrapper svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.arrow-icon-wrapper .icon-primary {
+  transform: translateX(0);
+}
+
+.arrow-icon-wrapper .icon-secondary {
+  transform: translateX(-100%);
+}
+
+.project-action-block:hover .icon-primary {
+  transform: translateX(100%);
+}
+
+.project-action-block:hover .icon-secondary {
+  transform: translateX(0);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .project-slide-inner {
+    padding: 0 1.5rem;
+  }
+  .project-slide-content {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .project-slide-title {
+    font-size: clamp(4rem, 15vw, 12rem);
+    margin-bottom: 0;
+  }
+  .project-slide-image-container {
+    height: 60vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-close-btn {
+    top: 1.5rem;
+    left: 1.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .project-slide-hero {
+    padding-top: 6rem;
+  }
+  .project-slide-title {
+    font-size: clamp(3rem, 15vw, 8rem);
+  }
+  .project-slide-image-container {
+    height: 40vh;
+  }
+  .project-slide-content {
+    padding: 3rem 0 6rem 0;
+  }
+  .project-description-text {
+    font-size: clamp(1.2rem, 5vw, 2rem);
+  }
+  .project-action-block .action-text {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,14 @@
+index.html
+README.md
+public\logo.svg
+public\vite.svg
+src\assets\react.svg
+src\assets\icons\facebook.svg
+src\assets\icons\github.svg
+src\assets\icons\instagram.svg
+src\assets\icons\link.svg
+src\assets\icons\linkedin.svg
+src\assets\icons\mail.svg
+src\assets\projects\artworld.png
+src\assets\projects\chatsphere.png
+src\assets\projects\disneyplus.png
