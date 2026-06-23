@@ -91,9 +91,9 @@ export default function ProjectSlide({ project, onClose }) {
 
                 <motion.div className="metadata-item" variants={childVariants}>
                   <span className="sub-font metadata-label">Technologies</span>
-                  <div className="metadata-value">
+                  <div className="tech-pills">
                     {project.techStack?.map((tech, index) => (
-                      <span key={index} className="sub-font">
+                      <span key={index} className="sub-font tech-pill">
                         {tech}
                       </span>
                     ))}
@@ -115,7 +115,12 @@ export default function ProjectSlide({ project, onClose }) {
                 </motion.p>
 
                 <motion.div style={{ marginTop: "2rem" }} variants={childVariants}>
-                  <a href="#" className="project-action-block">
+                  <a
+                    href={project.link || "#"}
+                    target={project.link ? "_blank" : undefined}
+                    rel={project.link ? "noopener noreferrer" : undefined}
+                    className="project-action-block"
+                  >
                     <span className="action-text sub-font" data-text="VISIT NOW">
                       VISIT NOW
                     </span>

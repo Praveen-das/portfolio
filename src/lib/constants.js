@@ -1,44 +1,36 @@
-import obsidianImg from "../assets/projects/obsidian.png";
-import visionImg from "../assets/projects/vision.png";
-import signalImg from "../assets/projects/signal.png";
-import voidImg from "../assets/projects/void.png";
-
 export const PROJECTS = [
   {
     id: "01",
-    title: "OBSIDIAN",
+    title: "VIREL",
     category: "DIGITAL PRODUCT",
     year: "2024",
-    image: obsidianImg,
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    description: "A minimalist workspace designed for thinkers and creators. Obsidian redefines productivity through a brutalist lens, focusing on raw interaction and spatial depth.",
+    image: "./virel.png",
+    techStack: ["React", "TypeScript", "TailwindCSS", "Express", "PostgreSQL", "Redis", "OlaMaps"],
+    description:
+      "Virel is a social discovery platform that connects people with local community events and custom travel routes. Users can explore neighborhoods on an interactive map, find popular regional activities, and plan multi-stop trips. By combining local discovery with group planning tools and a personalized activity feed, Virel makes community engagement simple and engaging.",
+    link: "https://client-black-one.vercel.app/",
   },
   {
     id: "02",
-    title: "VISION",
+    title: "CHATVIA",
     category: "ART DIRECTION",
     year: "2024",
-    image: visionImg,
-    techStack: ["React", "Three.js", "WebGL", "GLSL"],
-    description: "An immersive digital exhibition exploring the intersection of light and memory. Vision uses real-time WebGL distortions to create an ever-evolving visual narrative.",
+    image: "./chatvia.png",
+    techStack: ["React", "TypeScript", "TailwindCSS", "Express", "Socket.io", "Redis", "Kafka", "MongoDB", "Docker"],
+    description:
+      "A highly scalable, real-time chat app designed for secure global communication. It features private peer-to-peer end-to-end encryption (P2P E2EE) and smart AI assistance for a more helpful, intuitive experience. Built to handle massive growth, it ensures a fast, secure, and completely seamless connection for everyone.",
+    link: "https://chatapp-web-alpha.vercel.app/",
   },
   {
     id: "03",
-    title: "SIGNAL",
+    title: "ARTWORLD",
     category: "BRAND IDENTITY",
     year: "2023",
-    image: signalImg,
-    techStack: ["Node.js", "PostgreSQL", "Redis", "Docker"],
-    description: "A high-performance infrastructure built for seamless communication. Signal focuses on the raw transmission of data, visualized through a technical and precise design system.",
-  },
-  {
-    id: "04",
-    title: "VOID",
-    category: "INTERACTIVE EXP",
-    year: "2023",
-    image: voidImg,
-    techStack: ["Unity", "C#", "ARKit", "Blender"],
-    description: "A journey into the unknown. Void is an interactive AR experience that collapses the boundary between physical reality and digital abstraction.",
+    image: "artworld.png",
+    techStack: ["Next.js", "TypeScript", "MaterialUI", "Express", "Stripe", "PostgreSQL"],
+    description:
+      "An immersive digital gallery and marketplace designed for art discovery and trade. It features high-fidelity curation, secure transaction flows, and custom dashboard tools that empower artists to build their brand and collectors to acquire verified physical and digital artworks.",
+    link: "https://artworld-nine.vercel.app/",
   },
 ];
 
@@ -52,7 +44,4 @@ export const SEQUENCE_IMAGES = Object.keys(sequenceModules)
   .sort()
   .map((key) => sequenceModules[key]);
 
-export const PRELOAD_IMAGES = [
-  ...PROJECTS.map((p) => p.image),
-  ...SEQUENCE_IMAGES,
-];
+export const PRELOAD_IMAGES = [...PROJECTS.map((p) => p.image), ...SEQUENCE_IMAGES];

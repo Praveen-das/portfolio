@@ -5,7 +5,6 @@ import SomethingGreat from "./SomethingGreat";
 import "./Contact.css";
 
 export default function Contact() {
-
   return (
     <section className="section contact-section" id="contact">
       <div className="contact-container">
@@ -30,7 +29,12 @@ export default function Contact() {
             <motion.div className="contact-info-block" variants={childVariants}>
               <span className="info-label sub-font">FIND ME ON</span>
               <div className="social-icons">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <a
+                  href="https://github.com/Praveen-das"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-icon"
+                >
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
@@ -42,7 +46,12 @@ export default function Contact() {
                     <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                   </svg>
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <a
+                  href="https://www.linkedin.com/in/praveen-das-625631136/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-icon"
+                >
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
@@ -56,7 +65,12 @@ export default function Contact() {
                     <circle cx="4" cy="4" r="2"></circle>
                   </svg>
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <a
+                  href="https://www.instagram.com/_praveen_das/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-icon"
+                >
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
@@ -155,8 +169,6 @@ export default function Contact() {
           </div>
         </motion.div>
       </div>
-
-
     </section>
   );
 }

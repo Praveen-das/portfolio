@@ -109,43 +109,43 @@ function App() {
         {/* <AnimatePresence>{isLoading && <LoadingScreen />}</AnimatePresence> */}
         <Leva hidden />
 
-      <MenuOverlay
-        isOpen={isMenuOpen}
-        onClose={() => setIsMenuOpen(false)}
-        lenis={lenisRef.current}
-        setSelectedProject={setSelectedProject}
-      />
+        <MenuOverlay
+          isOpen={isMenuOpen}
+          onClose={() => setIsMenuOpen(false)}
+          lenis={lenisRef.current}
+          setSelectedProject={setSelectedProject}
+        />
 
-      <main>
-        <div className="canvas-zone">
-          <div ref={sequenceTrackRef} className="sequence-track-marker" />
-          <CanvasBackground scrollYProgress={scrollYProgress} aboutProgress={aboutProgress} />
+        <main>
+          <div className="canvas-zone">
+            <div ref={sequenceTrackRef} className="sequence-track-marker" />
+            <CanvasBackground scrollYProgress={scrollYProgress} aboutProgress={aboutProgress} />
 
-          <Hero />
+            <Hero />
 
-          <div
-            style={{
-              height: "30vh",
-              backgroundColor: "var(--bg-primary)",
-              mixBlendMode: "lighten",
-            }}
-          />
+            <div
+              style={{
+                height: "30vh",
+                backgroundColor: "var(--bg-primary)",
+                mixBlendMode: "lighten",
+              }}
+            />
 
-          <div ref={aboutRef} id="about">
-            <About />
+            <div ref={aboutRef} id="about">
+              <About />
+            </div>
+            <div id="projects">
+              <Projects />
+            </div>
           </div>
-          <div id="projects">
-            <Projects />
-          </div>
-        </div>
 
-        <Contact />
-        <CustomPointer />
-        <NoiseOverlay />
-        <ProgressiveBlur side="top" />
-        <ProgressiveBlur side="bottom" />
-      </main>
-    </div>
+          <Contact />
+          <CustomPointer />
+          <NoiseOverlay />
+          <ProgressiveBlur side="top" />
+          <ProgressiveBlur side="bottom" />
+        </main>
+      </div>
     </>
   );
 }

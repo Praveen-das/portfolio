@@ -170,6 +170,32 @@
   font-size: inherit; /* Override global .sub-font size */
 }
 
+.tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tech-pill {
+  font-size: 0.75rem !important;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+}
+
+.tech-pill:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
 /* Description Column */
 .project-description-container {
   display: flex;
