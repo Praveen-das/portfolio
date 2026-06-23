@@ -1,31 +1,4 @@
 @font-face {
-  font-family: "Deutschlander";
-  src: url("./assets/font/Deutschlander.otf") format("opentype");
-}
-
-@font-face {
-  font-family: "Mohave";
-  src: url("./assets/font/Mohave-Bold.otf") format("opentype");
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "Ioannina";
-  src: url("./assets/font/ioannina.bold.otf") format("opentype");
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "Heathergreen";
-  src: url("./assets/font/heathergreen.regular.otf") format("opentype");
-}
-
-@font-face {
-  font-family: "League Gothic Variable";
-  src: url("./assets/font/LeagueGothic-Regular-VariableFont_wdth.ttf") format("truetype");
-}
-
-@font-face {
   font-family: "DrukCond";
   src: url("./assets/font/Druk_Collection/DrukCondensedFamily/DrukXCond-Super-Trial.otf") format("opentype");
 }
@@ -33,21 +6,6 @@
 @font-face {
   font-family: "Druk";
   src: url("./assets/font/Druk_Collection/DrukFamily/Druk-Medium-Trial.otf") format("opentype");
-}
-
-@font-face {
-  font-family: "DrukWide";
-  src: url("./assets/font/Druk_Collection/DrukWideFamily/DrukWide-Medium-Trial.otf") format("opentype");
-}
-
-@font-face {
-  font-family: "DrukText";
-  src: url("./assets/font/Druk_Collection/DrukTextFamily/DrukText-Medium-Trial.otf") format("opentype");
-}
-
-@font-face {
-  font-family: "DrukTextWide";
-  src: url("./assets/font/Druk_Collection/DrukTextWideFamily/DrukTextWide-Medium-Trial.otf") format("opentype");
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
