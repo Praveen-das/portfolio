@@ -8,4 +8,22 @@ export default defineConfig({
   optimizeDeps: {
     include: ['leva', 'react-dom/client'],
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('framer-motion')) {
+              return 'vendor-framer-motion';
+            }
+            if (id.includes('leva')) {
+              return 'vendor-leva';
+            }
+            return 'vendor';
+          }
+        }
+      }
+    }
+  }
 })
+

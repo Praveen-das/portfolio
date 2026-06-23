@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
 @font-face {
   font-family: "DrukCond";
   src: url("./assets/font/Druk_Collection/DrukCondensedFamily/DrukXCond-Super-Trial.otf") format("opentype");
@@ -7,8 +9,6 @@
   font-family: "Druk";
   src: url("./assets/font/Druk_Collection/DrukFamily/Druk-Medium-Trial.otf") format("opentype");
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 :root {
   /* Typography */
