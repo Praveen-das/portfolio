@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, memo } from "react";
 
 // ── Shaders ────────────────────────────────────────────────────────────
 const VERT = `
@@ -8,11 +8,11 @@ const VERT = `
   }
 `;
 
+// mediump is sufficient for noise hash — faster on mobile GPUs
 const FRAG = `
-  precision highp float;
+  precision mediump float;
   uniform vec2 u_offset;
 
-  // High-quality hash — produces sharp, film-like monochrome grain
   float hash(vec2 p) {
     vec3 p3 = fract(vec3(p.xyx) * 0.1031);
     p3 += dot(p3, p3.yzx + 33.33);
@@ -20,7 +20,6 @@ const FRAG = `
   }
 
   void main() {
-    // Binary black/white noise keyed to pixel coordinate + random offset
     float n = step(0.5, hash(gl_FragCoord.xy + u_offset));
     gl_FragColor = vec4(vec3(n), 1.0);
   }
@@ -52,22 +51,46 @@ function createProgram(gl, vs, fs) {
   return program;
 }
 
-// ── Component ──────────────────────────────────────────────────────────
-const GRAIN_SCALE = 0.8; // Render at native res for fine, smaller grain
-const FPS = 24;
+// ── Constants ──────────────────────────────────────────────────────────
+const GRAIN_SCALE = 0.7; // Half-res — 60% fewer pixels, grain still reads well via CSS upscale
+const FRAME_INTERVAL = 1000 / 24; // ~24fps cinematic cadence
+const RESIZE_DEBOUNCE_MS = 150;
 
-const NoiseOverlay = () => {
+// Hoisted — avoids object re-creation on every render
+const CANVAS_STYLE = {
+  position: "fixed",
+  top: 0,
+  left: 0,
+  width: "100%",
+  height: "100%",
+  pointerEvents: "none",
+  zIndex: 100,
+  opacity: 0.2,
+  mixBlendMode: "soft-light",
+  willChange: "transform", // Promotes to own compositing layer
+};
+
+// Fullscreen quad data — allocated once, shared across mounts
+const QUAD_VERTICES = new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]);
+
+// ── Component ──────────────────────────────────────────────────────────
+const NoiseOverlay = memo(() => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    // alpha: false — CSS opacity handles blending, no need for GL alpha compositing
     const gl = canvas.getContext("webgl", {
-      alpha: true,
+      alpha: false,
       premultipliedAlpha: false,
       antialias: false,
       depth: false,
       stencil: false,
+      powerPreference: "low-power", // Prefer integrated GPU for this lightweight effect
     });
+
     if (!gl) return;
 
     const vs = compileShader(gl, gl.VERTEX_SHADER, VERT);
@@ -79,10 +102,9 @@ const NoiseOverlay = () => {
 
     gl.useProgram(program);
 
-    // Fullscreen quad (triangle strip)
     const buffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+    gl.bufferData(gl.ARRAY_BUFFER, QUAD_VERTICES, gl.STATIC_DRAW);
 
     const aPosition = gl.getAttribLocation(program, "a_position");
     gl.enableVertexAttribArray(aPosition);
@@ -90,35 +112,46 @@ const NoiseOverlay = () => {
 
     const uOffset = gl.getUniformLocation(program, "u_offset");
 
-    // Resize — render below native res for larger grain
-    const resize = () => {
-      canvas.width = Math.round(window.innerWidth * GRAIN_SCALE);
-      canvas.height = Math.round(window.innerHeight * GRAIN_SCALE);
-      gl.viewport(0, 0, canvas.width, canvas.height);
+    // Debounced resize — prevents GL viewport thrashing during drag-resize
+    let resizeTimer = 0;
+    const applyResize = () => {
+      const w = Math.round(window.innerWidth * GRAIN_SCALE);
+      const h = Math.round(window.innerHeight * GRAIN_SCALE);
+      if (canvas.width !== w || canvas.height !== h) {
+        canvas.width = w;
+        canvas.height = h;
+        gl.viewport(0, 0, w, h);
+      }
+    };
+    const onResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(applyResize, RESIZE_DEBOUNCE_MS);
     };
 
-    window.addEventListener("resize", resize);
-    resize();
+    window.addEventListener("resize", onResize);
+    applyResize();
 
-    // Render loop throttled to ~24fps for cinematic cadence
-    let animationId;
+    // Render loop — rAF only scheduled after a frame is drawn to avoid wasted callbacks
+    let animationId = 0;
     let lastTime = 0;
 
     const loop = (time) => {
+      const delta = time - lastTime;
+
+      if (delta >= FRAME_INTERVAL) {
+        lastTime = time - (delta % FRAME_INTERVAL); // Drift-corrected timing
+        gl.uniform2f(uOffset, Math.random() * 1000, Math.random() * 1000);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      }
+
       animationId = requestAnimationFrame(loop);
-
-      if (time - lastTime < 1000 / FPS) return;
-      lastTime = time;
-
-      // Random 2D offset prevents diagonal sliding patterns and ensures complete randomness
-      gl.uniform2f(uOffset, Math.random() * 1000, Math.random() * 1000);
-      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
     };
 
     animationId = requestAnimationFrame(loop);
 
     return () => {
-      window.removeEventListener("resize", resize);
+      window.removeEventListener("resize", onResize);
+      clearTimeout(resizeTimer);
       cancelAnimationFrame(animationId);
       gl.deleteBuffer(buffer);
       gl.deleteProgram(program);
@@ -127,22 +160,9 @@ const NoiseOverlay = () => {
     };
   }, []);
 
-  return (
-    <canvas
-      ref={canvasRef}
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        pointerEvents: "none",
-        zIndex: 100,
-        opacity: 0.18,
-        mixBlendMode: "soft-light",
-      }}
-    />
-  );
-};
+  return <canvas ref={canvasRef} style={CANVAS_STYLE} />;
+});
+
+NoiseOverlay.displayName = "NoiseOverlay";
 
 export default NoiseOverlay;
