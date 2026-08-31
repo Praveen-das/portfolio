@@ -61,6 +61,11 @@ export default function ProjectSlide({ project, onClose }) {
                 transition={{ duration: 1.0, delay: 0.5, ease: revealEase }}
               >
                 <img src={project.image} alt={project.title} />
+                {project.isDemo && (
+                  <div className="project-slide-hero-demo-tag sub-font">
+                    <span>DEMO</span>
+                  </div>
+                )}
               </motion.div>
             </section>
 
