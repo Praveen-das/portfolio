@@ -3,7 +3,7 @@ export const PROJECTS = [
     id: "01",
     title: "VIREL",
     category: "DIGITAL PRODUCT",
-    year: "2024",
+    year: "2026",
     image: "./virel.png",
     isDemo: true,
     techStack: ["React", "TypeScript", "TailwindCSS", "Express", "PostgreSQL", "Redis", "OlaMaps"],
