@@ -13,6 +13,7 @@ import CustomPointer from "./components/CustomPointer";
 import { usePortfolioStore } from "./stores/usePortfolioStore";
 import { useLenis } from "./hooks/useLenis";
 import { containerVariants, childVariants } from "./lib/framer";
+import { RESUME_URL } from "./lib/constants";
 import { motion } from "framer-motion";
 import "./App.css";
 
@@ -87,7 +88,7 @@ function App() {
           >
             CONTACT
           </a>
-          <a href="/resume.pdf" data-text="RESUME" download>
+          <a href={RESUME_URL} data-text="RESUME" target="_blank" rel="noopener noreferrer">
             RESUME
           </a>
         </nav>

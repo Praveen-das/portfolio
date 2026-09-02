@@ -1,13 +1,14 @@
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { slideEase, revealEase } from "../lib/framer";
+import { RESUME_URL } from "../lib/constants";
 import "./MenuOverlay.css";
 
 const menuItems = [
   { title: "ABOUT", id: "#about" },
   { title: "WORKS", id: "#projects" },
   { title: "CONTACT", id: "#contact" },
-  { title: "RESUME", id: "/resume.pdf", isDownload: true },
+  { title: "RESUME", id: RESUME_URL, isExternal: true },
 ];
 
 const containerVariants = {
@@ -74,7 +75,7 @@ export default function MenuOverlay({ isOpen, onClose, lenis, setSelectedProject
                     className="menu-item display-font"
                     variants={childVariants}
                     onClick={() => {
-                      if (item.isDownload) return;
+                      if (item.isExternal) return;
                       const target = item.id;
                       onClose();
                       setSelectedProject(null);
@@ -88,10 +89,11 @@ export default function MenuOverlay({ isOpen, onClose, lenis, setSelectedProject
                     }}
                   >
                     <span className="menu-item-title" data-text={item.title}>
-                      {item.isDownload ? (
+                      {item.isExternal ? (
                         <a
                           href={item.id}
-                          download
+                          target="_blank"
+                          rel="noopener noreferrer"
                           style={{ color: "inherit", textDecoration: "none" }}
                           onClick={onClose}
                         >

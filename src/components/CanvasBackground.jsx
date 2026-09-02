@@ -239,10 +239,10 @@ export default function CanvasBackground({ scrollYProgress, aboutProgress }) {
       gl.uniform2f(u_resolution, canvas.width, canvas.height);
     };
 
-    const targetMouse = { x: 0.5, y: 0.5, strength: 1.0 };
+    const targetMouse = { x: 0.5, y: 0.0, strength: 1.0 };
     const mice = Array(5)
       .fill()
-      .map(() => ({ x: 0.5, y: 0.5 }));
+      .map(() => ({ x: 0.5, y: 0.0 }));
     const historyFlat = new Float32Array(10);
 
     const handleMouseMove = (e) => {

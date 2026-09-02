@@ -1,3 +1,5 @@
+export const RESUME_URL = "/resume.pdf";
+
 export const PROJECTS = [
   {
     id: "01",

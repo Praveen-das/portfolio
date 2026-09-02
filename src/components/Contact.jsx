@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { containerVariants, childVariants, viewport } from "../lib/framer";
+import { RESUME_URL } from "../lib/constants";
 import LetsCreate from "./LetsCreate";
 import SomethingGreat from "./SomethingGreat";
 import "./Contact.css";
@@ -90,8 +91,9 @@ export default function Contact() {
             <motion.a
               className="contact-action-block"
               variants={childVariants}
-              href="/resume.pdf"
-              download
+              href={RESUME_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               style={{ textDecoration: "none" }}
             >
               <span className="action-text sub-font" data-text="DOWNLOAD RESUME">
