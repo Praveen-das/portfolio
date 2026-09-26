@@ -105,8 +105,8 @@ const LoadingScreen = () => {
           <div className="progress-bar-container">
             <motion.div 
               className="progress-bar-fill"
-              initial={{ width: "0%" }}
-              animate={{ width: `${counter}%` }}
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: counter / 100 }}
               transition={{ duration: 0.1 }}
             />
           </div>

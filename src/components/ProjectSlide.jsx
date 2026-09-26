@@ -59,6 +59,7 @@ export default function ProjectSlide({ project, onClose }) {
                 initial={{ clipPath: "inset(0 0 0 100%)", scale: 1.05, filter: "blur(8px)" }}
                 animate={{ clipPath: "inset(0% 0% 0% 0%)", scale: 1, filter: "blur(0px)" }}
                 transition={{ duration: 1.0, delay: 0.5, ease: revealEase }}
+                style={{ willChange: "transform, filter" }}
               >
                 <img src={project.image} alt={project.title} />
                 {project.isDemo && (

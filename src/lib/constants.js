@@ -3,6 +3,30 @@ export const RESUME_URL = "/resume.pdf";
 export const PROJECTS = [
   {
     id: "01",
+    title: "DOCSY AI",
+    category: "DIGITAL PRODUCT",
+    year: "2026",
+    image: "./docsy.png",
+    isDemo: true,
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "TailwindCSS",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Pinecone",
+      "Google Gemini",
+      "Upstash",
+      "Zustand",
+    ],
+    description:
+      "Docsy is an AI-powered document assistant that transforms static PDFs into interactive conversations. Users can upload files, ask questions in natural language, and receive instant, accurate answers tailored to their needs. By streamlining information discovery and summarizing lengthy content, Docsy makes understanding complex reports, study materials, and guides simple and engaging.",
+    link: "https://docsy-one.vercel.app/",
+  },
+
+  {
+    id: "02",
     title: "VIREL",
     category: "DIGITAL PRODUCT",
     year: "2026",
@@ -14,7 +38,7 @@ export const PROJECTS = [
     link: "https://client-black-one.vercel.app/",
   },
   {
-    id: "02",
+    id: "03",
     title: "CHATVIA",
     category: "ART DIRECTION",
     year: "2024",
@@ -26,7 +50,7 @@ export const PROJECTS = [
     link: "https://chatapp-web-alpha.vercel.app/",
   },
   {
-    id: "03",
+    id: "04",
     title: "ARTWORLD",
     category: "BRAND IDENTITY",
     year: "2023",

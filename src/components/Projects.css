@@ -120,6 +120,7 @@
 
 .project-layout:hover .image-overlay {
   opacity: 0.2;
+  will-change: opacity;
 }
 
 .project-img {
@@ -135,6 +136,7 @@
 .project-layout:hover .project-img {
   transform: scale(1.08);
   filter: grayscale(0) brightness(1.1);
+  will-change: transform, filter;
 }
 
 @media (max-width: 1024px) {

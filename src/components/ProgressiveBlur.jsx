@@ -1,6 +1,14 @@
 import React from "react";
 
-const ProgressiveBlur = ({ side = "top", height = "150px", className = "", zIndex = 90, position = "fixed", top, bottom }) => {
+const ProgressiveBlur = ({
+  side = "top",
+  height = "150px",
+  className = "",
+  zIndex = 90,
+  position = "fixed",
+  top,
+  bottom,
+}) => {
   const isTop = side === "top";
 
   // The original snippet used default direction ("to bottom").
@@ -38,13 +46,14 @@ const ProgressiveBlur = ({ side = "top", height = "150px", className = "", zInde
       className={`progressive-blur ${className}`}
       style={{
         position: position,
-        top: top !== undefined ? top : (isTop ? 0 : undefined),
-        bottom: bottom !== undefined ? bottom : (!isTop ? 0 : undefined),
+        top: top !== undefined ? top : isTop ? 0 : undefined,
+        bottom: bottom !== undefined ? bottom : !isTop ? 0 : undefined,
         left: 0,
         right: 0,
         height: `var(--blur-height, ${height})`,
         zIndex: zIndex,
         pointerEvents: "none",
+        willChange: "transform",
         // The container needs to let events pass through,
         // but backdrop-filter applies to the content underneath
       }}
@@ -60,8 +69,6 @@ const ProgressiveBlur = ({ side = "top", height = "150px", className = "", zInde
             WebkitMaskImage: `linear-gradient(${layer.mask})`,
             backdropFilter: `blur(${layer.blur}px)`,
             WebkitBackdropFilter: `blur(${layer.blur}px)`,
-            transition: "backdrop-filter 400ms, -webkit-backdrop-filter 400ms",
-            willChange: "backdrop-filter",
           }}
         />
       ))}

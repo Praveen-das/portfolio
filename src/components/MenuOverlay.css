@@ -10,6 +10,7 @@
   flex-direction: column;
   padding: 2rem 4rem;
   color: var(--text-primary);
+  will-change: transform;
 }
 
 .menu-overlay-fake {
@@ -20,6 +21,7 @@
   height: 100vh;
   background-color: var(--bg-primary); /* Black wiping effect */
   z-index: 999;
+  will-change: transform;
 }
 
 .menu-body {
@@ -48,6 +50,7 @@
 
 .menu-item:hover {
   transform: translateX(20px);
+  will-change: transform;
 }
 
 .menu-item-title {
@@ -80,6 +83,7 @@
 .menu-item:hover .menu-item-title::before,
 .menu-item:hover .menu-item-title::after {
   transform: translateY(-100%);
+  will-change: transform;
 }
 
 .menu-item-num {
@@ -113,6 +117,7 @@
 
 .menu-item:hover ~ .menu-image-container .menu-image {
   transform: scale(1.05);
+  will-change: transform;
 }
 
 @media (max-width: 768px) {

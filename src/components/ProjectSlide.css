@@ -7,6 +7,7 @@
   background: var(--bg-primary);
   z-index: 95;
   overflow: hidden;
+  will-change: transform;
 }
 
 .project-slide-panel-fake {
@@ -17,6 +18,7 @@
   height: 100%;
   background: #ff0000;
   z-index: 94;
+  will-change: transform;
 }
 
 .project-slide-backdrop {
@@ -27,6 +29,7 @@
   height: 100%;
   z-index: 90;
   cursor: pointer;
+  will-change: opacity;
 }
 
 /* Close Button */
@@ -73,10 +76,12 @@
 
 .project-close-btn:hover .close-icon-wrapper .icon-primary {
   transform: translateX(-100%);
+  will-change: transform;
 }
 
 .project-close-btn:hover .close-icon-wrapper .icon-secondary {
   transform: translateX(0);
+  will-change: transform;
 }
 
 .project-slide-inner {
@@ -194,6 +199,7 @@
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
+  will-change: transform;
 }
 
 /* Description Column */
@@ -261,6 +267,7 @@
 .project-action-block:hover .action-text::before,
 .project-action-block:hover .action-text::after {
   transform: translateY(-100%);
+  will-change: transform;
 }
 
 .project-action-block .action-arrow {
@@ -300,10 +307,12 @@
 
 .project-action-block:hover .icon-primary {
   transform: translateX(100%);
+  will-change: transform;
 }
 
 .project-action-block:hover .icon-secondary {
   transform: translateX(0);
+  will-change: transform;
 }
 
 /* Responsive */
