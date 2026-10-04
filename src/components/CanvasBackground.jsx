@@ -21,7 +21,6 @@ const fragmentShaderSource = `
   uniform vec2 u_resolution;
   uniform float u_globalOpacity;
   uniform vec2 u_mouseHistory[5];
-  uniform float u_time;
   uniform float u_mouseStrength;
   uniform vec3 u_scaleOffset;
   varying vec2 vUv;
@@ -80,14 +79,17 @@ const fragmentShaderSource = `
        float dist = distance(vUv, hMouse);
        
        // Expanding radius for older ghosts
-       float radius = 0.15 + float(i) * 0.05;
+       float radius = 0.3 + float(i) * 0.08;
        float ghostStrength = smoothstep(radius, 0.0, dist) * u_mouseStrength;
        
        if (ghostStrength > 0.0) {
            // Sample from an offset UV to create the echo tear effect
-           vec2 dir = normalize(vUv - hMouse);
+           vec2 diff = vUv - hMouse;
+            vec2 dir = length(diff) > 0.0001 ? normalize(diff) : vec2(0.0);
+            // Lag vector (leading cursor -> this ghost) shifts the echo along the motion path
+            vec2 lag = (u_mouseHistory[0] - hMouse) * 2.5;
            float offsetMag = ghostStrength * float(i) * 0.02;
-           vec2 sampleUv = uv - dir * offsetMag; // Pull towards ghost center
+           vec2 sampleUv = uv - dir * offsetMag - lag * ghostStrength; // Pull towards ghost center
            
            vec4 gColor1 = texture2D(u_image1, sampleUv);
            vec4 gColor2 = texture2D(u_image2, sampleUv);
@@ -176,7 +178,6 @@ export default function CanvasBackground({ scrollYProgress, aboutProgress }) {
     const u_resolution = gl.getUniformLocation(program, "u_resolution");
     const u_globalOpacity = gl.getUniformLocation(program, "u_globalOpacity");
     const u_mouseHistory = gl.getUniformLocation(program, "u_mouseHistory");
-    const u_time = gl.getUniformLocation(program, "u_time");
     const u_mouseStrength = gl.getUniformLocation(program, "u_mouseStrength");
     const u_scaleOffset = gl.getUniformLocation(program, "u_scaleOffset");
 
@@ -185,7 +186,6 @@ export default function CanvasBackground({ scrollYProgress, aboutProgress }) {
       u_globalOpacity,
       u_imageRes,
       u_mouseHistory,
-      u_time,
       u_mouseStrength,
       u_scaleOffset,
     };
@@ -231,12 +231,29 @@ export default function CanvasBackground({ scrollYProgress, aboutProgress }) {
     loadTexture(heroBg2, tex2, gl.TEXTURE1);
     gl.uniform1i(u_image2_loc, 1);
 
+    // Cached outside RAF: layout/media queries are expensive per frame
+    let isTouch = false;
+    let scale = 1.0;
+    let offsetX = 0.0;
+    let offsetY = 0.0;
+    let lastOpacity = -1;
+    const touchMQ = window.matchMedia("(pointer: coarse)");
+
     const resize = () => {
-      const dpr = window.devicePixelRatio || 1;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
       canvas.width = window.innerWidth * dpr;
       canvas.height = window.innerHeight * dpr;
       gl.viewport(0, 0, canvas.width, canvas.height);
       gl.uniform2f(u_resolution, canvas.width, canvas.height);
+
+      const isMobile = window.innerWidth <= 768;
+      isTouch = touchMQ.matches;
+      scale = isMobile ? 1.2 : 1.0;
+      offsetX = isMobile ? 0.015 : 0.0;
+      offsetY = isMobile ? 0.18 : 0.0;
+      gl.uniform1f(uniformsRef.current.u_mouseStrength, isTouch ? 0.0 : 1.0);
+      gl.uniform3f(uniformsRef.current.u_scaleOffset, scale, offsetX, offsetY);
+      lastOpacity = -1; // canvas buffer was cleared, force redraw
     };
 
     const targetMouse = { x: 0.5, y: 0.0, strength: 1.0 };
@@ -256,10 +273,9 @@ export default function CanvasBackground({ scrollYProgress, aboutProgress }) {
     resize();
 
     let animationFrameId;
-    let startTime = performance.now();
 
-    const render = (now) => {
-      const time = (now - startTime) * 0.001;
+    const render = () => {
+      animationFrameId = requestAnimationFrame(render);
 
       // Spring chain for ghost trailing
       mice[0].x += (targetMouse.x - mice[0].x) * 0.15;
@@ -270,29 +286,22 @@ export default function CanvasBackground({ scrollYProgress, aboutProgress }) {
         mice[i].y += (mice[i - 1].y - mice[i].y) * 0.25;
       }
 
+      // Fully faded out: background already drawn as flat color, skip GPU work
+      const op = opacity.get();
+      if (op === 0 && lastOpacity === 0) return;
+      lastOpacity = op;
+
       for (let i = 0; i < 5; i++) {
         historyFlat[i * 2] = mice[i].x;
         historyFlat[i * 2 + 1] = mice[i].y;
       }
 
-      const isTouch = window.matchMedia("(pointer: coarse)").matches;
-
-      const isMobile = window.innerWidth <= 768;
-      const scale = isMobile ? 1.2 : 1.0;
-      const offsetX = isMobile ? 0.015 : 0.0;
-      const offsetY = isMobile ? 0.18 : 0.0;
-
       gl.uniform1f(u_blend, blend.get());
-      gl.uniform1f(u_globalOpacity, opacity.get());
+      gl.uniform1f(u_globalOpacity, op);
       gl.uniform2f(uniformsRef.current.u_imageRes, imageSize.width || canvas.width, imageSize.height || canvas.height);
       gl.uniform2fv(uniformsRef.current.u_mouseHistory, historyFlat);
-      gl.uniform1f(uniformsRef.current.u_time, time);
-      gl.uniform1f(uniformsRef.current.u_mouseStrength, isTouch ? 0.0 : 1.0);
-      gl.uniform3f(uniformsRef.current.u_scaleOffset, scale, offsetX, offsetY);
 
-      gl.clear(gl.COLOR_BUFFER_BIT);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-      animationFrameId = requestAnimationFrame(render);
     };
 
     animationFrameId = requestAnimationFrame(render);

@@ -1,12 +1,13 @@
 /* ── NoiseOverlay ──────────────────────────────────────────────────────
  * Film-grain effect via a tiled noise texture + CSS stepping animation.
  * The background-image (data URL) is set once by the component on mount.
- * All animation runs on the compositor thread — zero JS per frame.
+ * Animates `transform` on an oversized layer (compositor-only, no repaint
+ * per step; background-position animation forces a repaint every step).
  * ─────────────────────────────────────────────────────────────────────── */
 
 .noise-overlay {
   position: fixed;
-  inset: 0;
+  inset: -150px;
   z-index: 100;
   pointer-events: none;
   opacity: 0.2;
@@ -14,29 +15,35 @@
   background-repeat: repeat;
   background-size: 250px 250px;
   animation: grain 480ms steps(6) infinite;
-  will-change: background-position;
+  will-change: transform;
 }
 
 @keyframes grain {
   0% {
-    background-position: 0 0;
+    transform: translate3d(0, 0, 0);
   }
   16.667% {
-    background-position: -100px -50px;
+    transform: translate3d(-100px, -50px, 0);
   }
   33.333% {
-    background-position: 60px -120px;
+    transform: translate3d(60px, -120px, 0);
   }
   50% {
-    background-position: -80px 70px;
+    transform: translate3d(-80px, 70px, 0);
   }
   66.667% {
-    background-position: 40px -90px;
+    transform: translate3d(40px, -90px, 0);
   }
   83.333% {
-    background-position: -60px 110px;
+    transform: translate3d(-60px, 110px, 0);
   }
   100% {
-    background-position: 0 0;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .noise-overlay {
+    animation: none;
   }
 }
