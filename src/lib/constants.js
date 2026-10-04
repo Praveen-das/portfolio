@@ -69,7 +69,7 @@ const sequenceModules = import.meta.glob("../assets/sequences/*.jpg", {
   import: "default",
 });
 
-export const SEQUENCE_IMAGES = Object.keys(sequenceModules)
+const SEQUENCE_IMAGES = Object.keys(sequenceModules)
   .sort()
   .map((key) => sequenceModules[key]);
 
